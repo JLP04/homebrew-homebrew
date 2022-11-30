@@ -7,6 +7,14 @@ class Tfdocgen < Formula
   license "GPL-2.0-or-later"
   head "https://github.com/debrouxl/tfdocgen.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/jlp04/homebrew"
+    sha256 cellar: :any,                 monterey:     "f626db68b00e514bcbad12fc3fe2746f5b7f3e0cf60f1c6ec64682795251d298"
+    sha256 cellar: :any,                 big_sur:      "08d3593bd8b5871b1157538a65ed1474fa44179e33512663932a021be45abad0"
+    sha256 cellar: :any,                 catalina:     "4aee181bbd8f58d6856ffd71af62d39cc20229ca34bd598cad86fcd77c258095"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "1b88f383c60cf4b72f5db8b1ae8ad21da50aea87b5e263e76e656dbbcfe0c556"
+  end
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "gettext" => :build
