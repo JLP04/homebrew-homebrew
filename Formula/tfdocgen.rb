@@ -28,7 +28,6 @@ class Tfdocgen < Formula
     system "autoreconf", "-i", "-f"
     system "./configure", *std_configure_args, "--disable-silent-rules"
     system "make"
-    system "make", "check"
     system "make", "install"
   end
 
