@@ -6,6 +6,9 @@ class Tfdocgen < Formula
   sha256 "f760bf06c5b450508b6b3ff785cf58d4bdfbbf9d32f92cc152bb3998deb747f1"
   license "GPL-2.0-or-later"
   head "https://github.com/debrouxl/tfdocgen.git", branch: "master"
+  livecheck do
+    skip "Based on git commits, version number doesn't change"
+  end
 
   bottle do
     root_url "https://ghcr.io/v2/jlp04/homebrew"
