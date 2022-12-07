@@ -10,6 +10,13 @@ class Libticables < Formula
     skip "Based on git commits, version number doesn't change"
   end
 
+  bottle do
+    root_url "https://ghcr.io/v2/jlp04/homebrew"
+    sha256 monterey:     "b716089297721c149184a9667eda429eff1788d5cd3c305602ff27526b1a8fd4"
+    sha256 big_sur:      "ce89ed919335d11d97c7bb8e2edc80cf25e3b41d054368c9e119b99731dd2028"
+    sha256 x86_64_linux: "5c800e092e425cfc4f9077c336d9c631858a35b72c4d3bad8b72322511800e2a"
+  end
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "gettext" => :build
