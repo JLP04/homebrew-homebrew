@@ -13,6 +13,13 @@ class Clamtk < Formula
     url :stable
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
+
+  bottle do
+    root_url "https://ghcr.io/v2/jlp04/homebrew"
+    sha256 cellar: :any_skip_relocation, monterey:     "8f7c4bc1bb48f3fcbe58ca3cde369e9cea81848b7f269b44511b7699a3b435db"
+    sha256 cellar: :any_skip_relocation, big_sur:      "3103d6dbacdad5c1e7ed8d7aac1ea8faca84325e117d7eda0fed24d032775350"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "d8cb4856a38dad966bc3a947a641b129b9540070da0b1b3c354647b46462232b"
+  end
   option "with-perlbrew", "Install using perlbrew's perl"
 
   depends_on "clamav"
