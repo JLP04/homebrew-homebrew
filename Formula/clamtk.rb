@@ -51,9 +51,21 @@ class Clamtk < Formula
   def caveats
     if build.with? "perlbrew"
       <<~EOS
+        If ClamTk complains about being unable to find the virus definitions, run the following commands:
+        ln -s /usr/local/var/lib/clamav/bytecode.cvd ~/.clamtk/db/cytecode.cvd
+        ln -s /usr/local/var/lib/clamav/daily.cvd ~/.clamtk/db/daily.cvd
+        ln -s /usr/local/var/lib/clamav/main.cvd ~/.clamtk/main.cvd
+
         If you want to install ClamTk to a perlbrew perl, run the following:
         sudo mkdir -p /opt/perl5/perls/perl-*/lib/site_perl/5.*/ClamTk
         sudo cp /usr/local/share/perl5/vendor_perl/ClamTk/*.pm /opt/perl5/perls/perl-*/lib/site_perl/5.*/ClamTk/
+      EOS
+    else
+      <<~EOS
+        If ClamTk complains about being unable to find the virus definitions, run the following commands:
+        ln -s /usr/local/var/lib/clamav/bytecode.cvd ~/.clamtk/db/cytecode.cvd
+        ln -s /usr/local/var/lib/clamav/daily.cvd ~/.clamtk/db/daily.cvd
+        ln -s /usr/local/var/lib/clamav/main.cvd ~/.clamtk/main.cvd
       EOS
     end
   end
