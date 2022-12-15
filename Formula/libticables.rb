@@ -41,6 +41,7 @@ class Libticables < Formula
       int main() {
         ticables_library_init();
         ticables_library_exit();
+        ticables_version_get();
         return 0;
       }
     EOS
