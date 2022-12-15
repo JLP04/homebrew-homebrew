@@ -10,6 +10,13 @@ class Libticonv < Formula
     skip "Based on git commits, version number doesn't change"
   end
 
+  bottle do
+    root_url "https://ghcr.io/v2/jlp04/homebrew"
+    sha256 cellar: :any,                 monterey:     "a5f438421d79c2eb14390a407806ad1e25123c2dfa2858498ee095b8224a7c00"
+    sha256 cellar: :any,                 big_sur:      "f190da9bf3b2142272564a38f145db7bb8b1600b1075afcd086f38a3fc16f8f6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "4a1e81b562cff983f4d142ce04f7fd7c998373d9d3ca4b07eff183ec20798758"
+  end
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "gettext" => :build
