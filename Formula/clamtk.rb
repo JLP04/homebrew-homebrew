@@ -27,17 +27,15 @@ class Clamtk < Formula
 
   def install
     inreplace "lib/App.pm" do |s|
-      s.gsub! "/usr/share/pixmaps", "/usr/local/share/pixmaps"
+      s.gsub! "/usr/share/pixmaps", HOMEBREW_PREFIX/"share/pixmaps"
       s.gsub! "/.local/share/Trash", "/.Trash" if OS.mac?
     end
     bin.install "clamtk"
     man1.install "clamtk.1.gz"
-    # cd share do
     mkdir "#{share}/applications"
     mkdir "#{share}/metainfo"
     mkdir "#{share}/perl5/vendor_perl/ClamTk"
     mkdir "#{share}/pixmaps"
-    # end
     (share/"applications").install "clamtk.desktop"
     (share/"metainfo").install "com.github.davetheunsub.clamtk.appdata.xml"
     (share/"perl5/vendor_perl/ClamTk").install Dir["lib/*.pm"]
@@ -45,7 +43,9 @@ class Clamtk < Formula
   end
 
   def post_install
-    inreplace "#{bin}/clamtk", "#!/usr/local/opt/perl/bin/perl", "#!/usr/bin/env perl" if build.with?("perlbrew")
+    if build.with? "perlbrew"
+      inreplace "#{bin}/clamtk", "#!#{HOMEBREW_PREFIX}/opt/perl/bin/perl", "#!/usr/bin/env perl"
+    end
   end
 
   def caveats
