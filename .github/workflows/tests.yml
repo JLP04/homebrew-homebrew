@@ -34,7 +34,9 @@ jobs:
 
       - run: brew test-bot --only-tap-syntax
 
-      - run: brew test-bot --only-formulae --root-url=https://ghcr.io/v2/jlp04/homebrew
+      - env:
+          HOMEBREW_NO_INSTALL_FROM_API: 1 
+        run: brew test-bot --only-formulae --root-url=https://ghcr.io/v2/jlp04/homebrew
         if: github.event_name == 'pull_request'
 
       - name: Upload bottles as artifact
