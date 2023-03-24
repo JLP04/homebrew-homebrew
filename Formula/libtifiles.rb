@@ -10,6 +10,13 @@ class Libtifiles < Formula
     skip "Based on git commits, version number doesn't change"
   end
 
+  bottle do
+    root_url "https://ghcr.io/v2/jlp04/homebrew"
+    sha256 monterey:     "dd08a99e23563fbd36f6b769334be4440c96c346d8ad20d5f88786059347c935"
+    sha256 big_sur:      "f8d9423bcb9eaa122a20b9899fa05927eb4e2126392439747c4733395b386b76"
+    sha256 x86_64_linux: "9459b4aeb29db846b90d52eb555ea9ba200b0a3f434af7f586d54b341a1c02be"
+  end
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "gettext" => :build
