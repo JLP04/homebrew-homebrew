@@ -27,6 +27,11 @@ class Tfdocgen < Formula
   depends_on "pkg-config" => :build
   depends_on "glib"
 
+  resource "testdocs" do
+    url "https://github.com/debrouxl/tilibs/archive/12ff32e7bfd7652efae4b5d867bf231ab7d1b170.tar.gz"
+    sha256 "720b07e811bcf2be8e6e5897e1d8501e7f3259bfa8b834af2cc1c7b6fbaeed69"
+  end
+
   def install
     Dir.chdir("trunk") if build.stable?
     system "autoreconf", "-i", "-f"
@@ -38,5 +43,9 @@ class Tfdocgen < Formula
   test do
     shell_output("#{bin}/tfdocgen --version")
     shell_output("#{bin}/tfdocgen --help")
+    resource("testdocs").stage testpath/"libs"
+    Dir.chdir("#{testpath}/libs/libticables/trunk")
+    system "#{bin}/tfdocgen", "./"
+    assert_predicate testpath/"libs/libticables/trunk/docs/html/api.html", :exist?
   end
 end
