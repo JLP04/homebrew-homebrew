@@ -21,7 +21,7 @@ class Libticonv < Formula
   depends_on "automake" => :build
   depends_on "gettext" => :build
   depends_on "libtool" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkg-config" => [:build, :test]
   depends_on "tfdocgen" => :build
   depends_on "glib"
 
@@ -37,13 +37,22 @@ class Libticonv < Formula
   test do
     (testpath/"test.c").write <<~EOS
       #include <stdio.h>
-      #include <tilp2/ticonv.h>
+      #include <string.h>
+      #include <glib.h>
+      #include <ticonv.h>
+
       int main() {
         ticonv_version_get();
-        return 0;
+        char ti92_varname[9] = { 0 };
+        char *utf8;
+
+        utf8 = ticonv_varname_to_utf8(CALC_TI92, ti92_varname, -1);
+        printf("UTF-8 varname: <%s> (%i)\\n", ti92_varname, (int)strlen(ti92_varname));
+        ticonv_utf8_free(utf8);
       }
     EOS
-    system ENV.cc, "test.c", "-L#{lib}", "-lticonv", "-o", "test"
+    flags = shell_output("pkg-config --cflags --libs ticonv").chomp.split
+    system ENV.cc, "-Os", "-g", "-Wall", "-W", "test.c", *flags, "-o", "test"
     system "./test"
   end
 end
