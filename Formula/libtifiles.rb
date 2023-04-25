@@ -27,6 +27,11 @@ class Libtifiles < Formula
   depends_on "libarchive"
   depends_on "libticonv"
 
+  resource("testfile") do
+    url "https://education.ti.com/download/en/ed-tech/55EDE969CFD2484487B4556641BDDC4E/B38964FB6AF244DFA4674BA19128646C/CabriJr_CE.8ek"
+    sha256 "6e28f09a50293a14c49ce438d2fa336392c538d44c4b5ef18964e239825d1303"
+  end
+
   def install
     Dir.chdir("libtifiles/trunk")
     system "autoreconf", "-i", "-f"
@@ -38,16 +43,26 @@ class Libtifiles < Formula
 
   test do
     (testpath/"test.c").write <<~EOS
-      #include <stdio.h>
       #include <tilp2/tifiles.h>
+
       int main() {
+        FlashContent *content;
+
+        content = tifiles_content_create_flash(CALC_TI84PCE_USB);
+
         tifiles_library_init();
         tifiles_version_get();
+
+        tifiles_file_read_flash("CabriJr_CE.8ek", content);
+        tifiles_file_display_flash(content);
+
         return 0;
       }
     EOS
-    flags = shell_output("pkg-config --cflags ticonv").chomp.split
-    system ENV.cc, "test.c", *flags, "-L#{lib}", "-ltifiles2", "-o", "test"
+    resource("testfile").stage testpath
+    ENV["PKG_CONFIG_PATH"] = "#{HOMEBREW_PREFIX}/opt/libarchive/lib/pkgconfig"
+    flags = shell_output("pkg-config --cflags --libs tifiles2").chomp.split
+    system ENV.cc, "-Os", "-g", "-Wall", "-W", "test.c", *flags, "-o", "test"
     system "./test"
   end
 end
