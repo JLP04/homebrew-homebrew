@@ -12,9 +12,10 @@ class Libtifiles < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/jlp04/homebrew"
-    sha256 monterey:     "dd08a99e23563fbd36f6b769334be4440c96c346d8ad20d5f88786059347c935"
-    sha256 big_sur:      "f8d9423bcb9eaa122a20b9899fa05927eb4e2126392439747c4733395b386b76"
-    sha256 x86_64_linux: "9459b4aeb29db846b90d52eb555ea9ba200b0a3f434af7f586d54b341a1c02be"
+    rebuild 1
+    sha256 monterey:     "1ace018e48a5ef060560da48a09936bfcd4bb5a2d504824ed27edf45255a3845"
+    sha256 big_sur:      "b4b74c9f81651f34e42c3415e9e4913cb58a7a9d26d8391528ae7e45369e9b81"
+    sha256 x86_64_linux: "d9310f5d78b05e74a77b449d9cf526f81a720817eb3bcb1243fe68ae742e0958"
   end
 
   depends_on "autoconf" => :build
