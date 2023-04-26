@@ -10,6 +10,13 @@ class Gfm < Formula
     skip "Based on git commits, version number doesn't change"
   end
 
+  bottle do
+    root_url "https://ghcr.io/v2/jlp04/homebrew"
+    sha256 monterey:     "15071a3939018e6d50437637b8704ae33857e632e126875d536fb6fed3cd8566"
+    sha256 big_sur:      "f76894f9d492a96f6f5b835be3da7774620bb57152630e0133f7a03fe726ca80"
+    sha256 x86_64_linux: "cbf6e42f3791ae002be248f321255b37504f612020cc077c6eaa0b74cb4d7a5a"
+  end
+
   depends_on "atk" => :build
   depends_on "autoconf" => :build
   depends_on "automake" => :build
