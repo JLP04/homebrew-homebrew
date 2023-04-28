@@ -20,7 +20,6 @@ class Libtifiles < Formula
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
-  depends_on "gettext" => :build
   depends_on "libtool" => :build
   depends_on "pkg-config" => [:build, :test]
   depends_on "tfdocgen" => :build
