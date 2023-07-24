@@ -63,15 +63,23 @@ class Tilp < Formula
     end
   end
 
+  resource("testfile1") do
+    url "https://education.ti.com/download/en/ed-tech/55EDE969CFD2484487B4556641BDDC4E/B38964FB6AF244DFA4674BA19128646C/CabriJr_CE.8ek"
+    sha256 "6e28f09a50293a14c49ce438d2fa336392c538d44c4b5ef18964e239825d1303"
+  end
+
+  resource("testfile2") do
+    url "https://education.ti.com/download/en/ed-tech/BCBFECEC5F4242B28E9AE89DA7C4BA59/19F6D328252E40C1BD528680D66B559D/TI84CEBundle-5.8.0.22.b84"
+    sha256 "6ba1de2fc18bcc212059f18d9021da2d2d1e9b39795dff821e59f29a957b452b"
+  end
+
   def install
     if OS.linux?
       ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
-      resources.each do |res|
-        res.stage do
-          system "perl", "Makefile.PL", "INSTALL_BASE=#{libexec}"
-          system "make", "PERL5LIB=#{ENV["PERL5LIB"]}"
-          system "make", "install"
-        end
+      resource("XML::Parser").stage do
+        system "perl", "Makefile.PL", "INSTALL_BASE=#{libexec}"
+        system "make", "PERL5LIB=#{ENV["PERL5LIB"]}"
+        system "make", "install"
       end
     end
     Dir.chdir("tilp/trunk")
@@ -83,8 +91,11 @@ class Tilp < Formula
   end
 
   test do
+    resource("testfile1").stage testpath
+    resource("testfile2").stage testpath
     shell_output("#{bin}/tilp --help")
     shell_output("#{bin}/tilp --version")
-    shell_output("#{bin}/tilp --no-gui")
+    system "#{bin}/tilp", "-n"
+    system "#{bin}/tilp", "-n", "--cable", "Null", "--calc", "None", "CabriJr_CE.8ek", "TI84CEBundle-5.8.0.22.b84"
   end
 end
