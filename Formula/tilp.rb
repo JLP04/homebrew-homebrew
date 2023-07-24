@@ -10,6 +10,13 @@ class Tilp < Formula
     skip "Based on git commits, version number doesn't change"
   end
 
+  bottle do
+    root_url "https://ghcr.io/v2/jlp04/homebrew"
+    sha256 monterey:     "daf30dadf5c2357f88d1553d9a91d51aefe41d35f8ebd6682d00821b150c56c6"
+    sha256 big_sur:      "44b1fa5028a92dbe0ad6b167b674df2bb5f1f5535964ecf8e575edde8fcb329f"
+    sha256 x86_64_linux: "9f98606c46753394365e94ccc79ba9dec81abb94abaa07ccd55e5e5014a9fac6"
+  end
+
   depends_on "atk" => :build
   depends_on "autoconf" => :build
   depends_on "automake" => :build
