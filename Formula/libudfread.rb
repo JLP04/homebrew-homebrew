@@ -10,6 +10,14 @@ class Libudfread < Formula
     url :head
   end
 
+  bottle do
+    root_url "https://ghcr.io/v2/jlp04/homebrew"
+    sha256 cellar: :any,                 ventura:      "8f9a15e09cfa31d2fa18fd1abb864793e724b0fadb79d4d9c1ec4188e10cd3e1"
+    sha256 cellar: :any,                 monterey:     "628d4f0c7c656cc03712c7428ea9af0375b79a269c99bda5ff5694c5fe9c07c0"
+    sha256 cellar: :any,                 big_sur:      "887e4360a8ced30899ed26f4c6bfa5653dadf457d90d34535107cb84fa103353"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "b9df39b0487f8ced9f240b730ab4690c5f894f52b5ef81552a6f084bc31d68b6"
+  end
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
