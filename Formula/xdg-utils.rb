@@ -10,6 +10,14 @@ class XdgUtils < Formula
     regex(/href=.*?xdg-utils[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://ghcr.io/v2/jlp04/homebrew"
+    sha256 cellar: :any_skip_relocation, ventura:      "e087a56b7fd1aac99244459bb5a1964b2750ccb37c7ee8e9b813e7e7d733d991"
+    sha256 cellar: :any_skip_relocation, monterey:     "fe3f5c4de3cce3806b6d474532b224abc78a2f77fe4e5696add84fd5173b28df"
+    sha256 cellar: :any_skip_relocation, big_sur:      "6bc2021b963728f79b2f478c5002b498dc81bb5d5c4d13178b6b4bd11858e714"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "668fdc454fa74916188e5ebefc5a8d4da96fd85e5832036045fa1abe1bad9166"
+  end
+
   depends_on "lynx" => :build
   depends_on "xmlto" => :build
 
