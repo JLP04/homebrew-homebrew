@@ -27,8 +27,8 @@ class Tfdocgen < Formula
   depends_on "glib"
 
   resource "testdocs" do
-    url "https://github.com/debrouxl/tilibs/archive/12ff32e7bfd7652efae4b5d867bf231ab7d1b170.tar.gz"
-    sha256 "720b07e811bcf2be8e6e5897e1d8501e7f3259bfa8b834af2cc1c7b6fbaeed69"
+    url "https://github.com/debrouxl/tilibs/archive/27586cc02a07777836a7974f020bdfdb43789b83.tar.gz"
+    sha256 "85e6e9c716d4247ae8e0eb6813738a131cb92cf938fc56078979e1030f05ab08"
   end
 
   def install
