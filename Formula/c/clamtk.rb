@@ -1,9 +1,9 @@
 class Clamtk < Formula
   desc "Easy to use, light-weight, on-demand virus scanner for Linux systems"
   homepage "https://gitlab.com/dave_m/clamtk/-/wikis/home"
-  url "https://gitlab.com/dave_m/clamtk/-/archive/0d118b5d7cf0125dfed3e1e54a548970a2270abe/clamtk-0d118b5d7cf0125dfed3e1e54a548970a2270abe.tar.gz"
-  version "6.15"
-  sha256 "44b9ae91c76ae40924b56c9d9275382c6bd8afdd3c7bc03a2a2decb2d7d8c533"
+  url "https://gitlab.com/dave_m/clamtk/-/archive/662124a88f9a3ce789f48ea4704d059922a207dd/clamtk-662124a88f9a3ce789f48ea4704d059922a207dd.tar.gz"
+  version "6.16"
+  sha256 "4c5b80c127c54b306135c6365d715c5a64c36f28c67a21b55eb70854e41217ab"
   license all_of: [
     "BSD-3-Clause",
     any_of: ["GPL-1.0-or-later", "Artistic-2.0"],
@@ -53,7 +53,9 @@ class Clamtk < Formula
     if build.with? "perlbrew"
       <<~EOS
         If you want to install ClamTk to a perlbrew perl, run the following:
-        sudo mkdir -p /opt/perl5/perls/perl-*/lib/site_perl/5.*/ClamTk
+        for d in /opt/perl5/perls/perl-*; do
+          sudo mkdir -p "$d"/lib/site_perl/5.*/ClamTk
+        done
         sudo cp /usr/local/share/perl5/vendor_perl/ClamTk/*.pm /opt/perl5/perls/perl-*/lib/site_perl/5.*/ClamTk/
       EOS
     end
