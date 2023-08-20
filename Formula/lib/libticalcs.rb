@@ -13,9 +13,9 @@ class Libticalcs < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/jlp04/homebrew"
-    sha256 monterey:     "b128c64ec640f4fede42409e3cd22dcb8e3401f4197dc75af950ef18cdc84123"
-    sha256 big_sur:      "785724a69fcb8403a8763dfb63f7db9e3be32916421a76a468959dc30f678a93"
-    sha256 x86_64_linux: "11eb0898a57fca7a447e4293d006bef8106be416818d194c2d4e77851a37143f"
+    sha256 monterey:     "df51519e68694765587a317298f17ff5535ed750beba1372601f511a0123acb5"
+    sha256 big_sur:      "d185fc54702f0b6c7bf81c66d819982f69ebf32dcecf27ddbdf4b3e54878d076"
+    sha256 x86_64_linux: "0092a706a312f1da107c3d40a1cba508cdc82bd2046c21ad74d401692591a7c3"
   end
 
   depends_on "autoconf" => :build
