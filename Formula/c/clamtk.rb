@@ -8,6 +8,7 @@ class Clamtk < Formula
     "BSD-3-Clause",
     any_of: ["GPL-1.0-or-later", "Artistic-2.0"],
   ]
+  revision 1
   head "https://gitlab.com/dave_m/clamtk.git", branch: "master"
   livecheck do
     url :stable
@@ -56,8 +57,8 @@ class Clamtk < Formula
     end
 
     resource "Glib" do
-      url "https://cpan.metacpan.org/authors/id/X/XA/XAOC/Glib-1.3293.tar.gz"
-      sha256 "7316a0c1e7cc5cb3db7211214f45d7bdc2354365a680ac4bd3ac8bf06d1cb500"
+      url "https://cpan.metacpan.org/authors/id/X/XA/XAOC/Glib-1.3294.tar.gz"
+      sha256 "d715f5a86bcc187075de85e7ae5bc07b0714d6edc196a92da43986efa44e5cbb"
     end
 
     resource "LWP::UserAgent" do
@@ -141,8 +142,8 @@ class Clamtk < Formula
     end
 
     resource "Glib::Object::Introspection" do
-      url "https://cpan.metacpan.org/authors/id/X/XA/XAOC/Glib-Object-Introspection-0.050.tar.gz"
-      sha256 "ecf3bbb824df5eed6a3a7fcfd61be9ef448519801badcc82a6e3c4daab0cd763"
+      url "https://cpan.metacpan.org/authors/id/X/XA/XAOC/Glib-Object-Introspection-0.051.tar.gz"
+      sha256 "6569611dcc80ac1482c7c22264b1ae8c9c351d4983511eb9a6c5f47a10150089"
     end
   end
 
@@ -199,55 +200,107 @@ class Clamtk < Formula
   end
 
   test do
-    (testpath/"test").write <<~EOS
-      #!#{HOMEBREW_PREFIX}/opt/perl/bin/perl
-      use utf8;
-      $| = 1;
+    if OS.mac?
+      (testpath/"test").write <<~EOS
+        #!#{HOMEBREW_PREFIX}/opt/perl/bin/perl
+        use utf8;
+        $| = 1;
 
-      use lib '.';
-      use ClamTk::Analysis;
-      use ClamTk::App;
-      use ClamTk::Assistant;
-      use ClamTk::GUI;
-      use ClamTk::History;
-      use ClamTk::Icons;
-      use ClamTk::Network;
-      use ClamTk::Prefs;
-      use ClamTk::Results;
-      use ClamTk::Scan;
-      use ClamTk::Schedule;
-      use ClamTk::Settings;
-      use ClamTk::Shortcuts;
-      use ClamTk::Startup;
-      use ClamTk::Update;
-      use ClamTk::Quarantine;
-      use ClamTk::Whitelist;
+        use lib '.';
+        use ClamTk::Analysis;
+        use ClamTk::App;
+        use ClamTk::Assistant;
+        use ClamTk::GUI;
+        use ClamTk::History;
+        use ClamTk::Icons;
+        use ClamTk::Network;
+        use ClamTk::Prefs;
+        use ClamTk::Results;
+        use ClamTk::Scan;
+        use ClamTk::Schedule;
+        use ClamTk::Settings;
+        use ClamTk::Shortcuts;
+        use ClamTk::Startup;
+        use ClamTk::Update;
+        use ClamTk::Quarantine;
+        use ClamTk::Whitelist;
 
-      use Encode 'decode';
-      use Locale::gettext;
-      use POSIX 'locale_h';
-      textdomain( 'clamtk' );
-      setlocale( LC_ALL, '' );
+        use Encode 'decode';
+        use Locale::gettext;
+        use POSIX 'locale_h';
+        textdomain( 'clamtk' );
+        setlocale( LC_ALL, '' );
 
-      setlocale( LC_TIME, 'C' );
-      bind_textdomain_codeset( 'clamtk', 'UTF-8' );
+        setlocale( LC_TIME, 'C' );
+        bind_textdomain_codeset( 'clamtk', 'UTF-8' );
 
-      my $arg = decode ( 'utf8', $ARGV[0] );
+        my $arg = decode ( 'utf8', $ARGV[0] );
 
-      my $trash_dir = ClamTk::App->get_path( 'trash_dir' );
-      if ( $arg eq '//' ) {
-        $arg = $trash_dir;
-      } elsif ( $arg =~ m#^//(.*?)$# ) {
-        my $trash_dir_files = ClamTk::App->get_path( 'trash_dir_files' );
-        if ( -e "$trash_dir_files/$1" ) {
-          $arg = "$trash_dir_files/$1";
+        my $trash_dir = ClamTk::App->get_path( 'trash_dir' );
+        if ( $arg eq '//' ) {
+          $arg = $trash_dir;
+        } elsif ( $arg =~ m#^//(.*?)$# ) {
+          my $trash_dir_files = ClamTk::App->get_path( 'trash_dir_files' );
+          if ( -e "$trash_dir_files/$1" ) {
+            $arg = "$trash_dir_files/$1";
+          }
         }
-      }
 
-      ClamTk::Prefs->structure;
+        ClamTk::Prefs->structure;
 
-      ClamTk::Prefs->custom_prefs;
-    EOS
+        ClamTk::Prefs->custom_prefs;
+      EOS
+    end
+    if OS.linux?
+      (testpath/"test").write <<~EOS
+        #!#{HOMEBREW_PREFIX}/opt/perl/bin/perl
+        use utf8;
+        $| = 1;
+
+        use lib '.';
+        use ClamTk::Analysis;
+        use ClamTk::App;
+        use ClamTk::Assistant;
+        use ClamTk::History;
+        use ClamTk::Icons;
+        use ClamTk::Network;
+        use ClamTk::Prefs;
+        use ClamTk::Results;
+        use ClamTk::Scan;
+        use ClamTk::Schedule;
+        use ClamTk::Settings;
+        use ClamTk::Shortcuts;
+        use ClamTk::Startup;
+        use ClamTk::Update;
+        use ClamTk::Quarantine;
+        use ClamTk::Whitelist;
+
+        use Encode 'decode';
+        use Locale::gettext;
+        use POSIX 'locale_h';
+        textdomain( 'clamtk' );
+        setlocale( LC_ALL, '' );
+
+        setlocale( LC_TIME, 'C' );
+        bind_textdomain_codeset( 'clamtk', 'UTF-8' );
+
+        my $arg = decode ( 'utf8', $ARGV[0] );
+
+        my $trash_dir = ClamTk::App->get_path( 'trash_dir' );
+        if ( $arg eq '//' ) {
+          $arg = $trash_dir;
+        } elsif ( $arg =~ m#^//(.*?)$# ) {
+          my $trash_dir_files = ClamTk::App->get_path( 'trash_dir_files' );
+          if ( -e "$trash_dir_files/$1" ) {
+            $arg = "$trash_dir_files/$1";
+          }
+        }
+
+        ClamTk::Prefs->structure;
+
+        ClamTk::Prefs->custom_prefs;
+      EOS
+    end
     inreplace "test", "#!#{HOMEBREW_PREFIX}/opt/perl/bin/perl", "#!/usr/bin/env perl" if build.with? "perlbrew"
     ENV.prepend_create_path "PERL5LIB", "#{share}/perl5/vendor_perl" if build.without? "perlbrew"
     ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
