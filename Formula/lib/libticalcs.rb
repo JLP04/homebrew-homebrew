@@ -1,11 +1,11 @@
 class Libticalcs < Formula
   desc "TiCalcs library is a part of the TiLP project"
   homepage "http://lpg.ticalc.org/prj_tilp"
-  url "https://github.com/debrouxl/tilibs/archive/f2d61881844c28a14eef27df5e1798cdcc1ec873.tar.gz"
+  url "https://github.com/debrouxl/tilibs/archive/1eb19a48f4c40fdc1093949603d3111e22ed9962.tar.gz"
   version "1.1.10"
-  sha256 "2ba36dc3ce22837004878e9b8a98d351e176d5f57fe8be23c10e6da2eff339f9"
+  sha256 "263a12290496a03423356f5d07233d9ec1cad518f0ebedfc29b82d4660084589"
   license "GPL-2.0-or-later"
-  revision 3
+  revision 4
   head "https://github.com/debrouxl/tilibs.git", branch: "master"
   livecheck do
     skip "Based on git commits, version number doesn't change"
@@ -29,12 +29,6 @@ class Libticalcs < Formula
   depends_on "libticables"
   depends_on "libticonv"
   depends_on "libtifiles"
-
-  # Fix error about invalid use of non-static member 'data'
-  # Issue ref: https://github.com/debrouxl/tilibs/issues/80#issuecomment-1685296325
-  on_macos do
-    patch :DATA
-  end
 
   def install
     Dir.chdir("libticalcs/trunk")
@@ -110,48 +104,3 @@ class Libticalcs < Formula
     system "./test"
   end
 end
-__END__
-diff --git a/libticalcs/trunk/src/dusb_vpkt.cc b/libticalcs/trunk/src/dusb_vpkt.cc
-index e1e55c0..67557cc 100644
---- a/libticalcs/trunk/src/dusb_vpkt.cc
-+++ b/libticalcs/trunk/src/dusb_vpkt.cc
-@@ -365,10 +365,10 @@ TIEXPORT3 int TICALL dusb_set_buf_size(CalcHandle* handle, uint32_t size)
- {
- 	VALIDATE_HANDLE(handle);
- 
--	if (size > sizeof(DUSBRawPacket::data) + 1)
-+	if (size > DUSB_DATA_SIZE + 1)
- 	{
- 		ticalcs_warning("Clamping dubious large DUSB buffer size");
--		size = sizeof(DUSBRawPacket::data) + 1;
-+		size = DUSB_DATA_SIZE + 1;
- 	}
- 
- 	handle->priv.dusb_rpkt_maxlen = size;
-diff --git a/libticalcs/trunk/src/ticalcs.h b/libticalcs/trunk/src/ticalcs.h
-index 95db449..e8c3802 100644
---- a/libticalcs/trunk/src/ticalcs.h
-+++ b/libticalcs/trunk/src/ticalcs.h
-@@ -352,6 +352,8 @@ typedef struct
- 
- //! Size of the header of a \a DUSBRawPacket
- #define DUSB_HEADER_SIZE (4+1)
-+//! Size of the data contained in \a DUSBRawPacket
-+#define DUSB_DATA_SIZE (1023)
- 
- /**
-  * DUSBRawPacket:
-@@ -360,10 +362,10 @@ typedef struct
-  **/
- typedef struct
- {
--	uint32_t size;       ///< raw packet size
--	uint8_t  type;       ///< raw packet type
-+	uint32_t size;                 ///< raw packet size
-+	uint8_t  type;                 ///< raw packet type
- 
--	uint8_t  data[1023]; ///< raw packet data
-+	uint8_t  data[DUSB_DATA_SIZE]; ///< raw packet data
- } DUSBRawPacket;
- 
- /**
