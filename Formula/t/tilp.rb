@@ -1,10 +1,11 @@
 class Tilp < Formula
   desc "Program allowing a computer to communicate with TI graphing calculators"
   homepage "http://lpg.ticalc.org/prj_tilp"
-  url "https://github.com/debrouxl/tilp_and_gfm/archive/71eaa92de3962a8602a86275d35489f1aa087d9d.tar.gz"
+  url "https://github.com/debrouxl/tilp_and_gfm/archive/2cf5dc93ab8f856808ed323cfc2e84cd94e06d89.tar.gz"
   version "1.19"
-  sha256 "41b202aed7e384c36d6c9dd32f8c9b3bb9beefaaa76be86387cd314f43403b3e"
+  sha256 "802006018a2d95163aa6df02567acd5da83fdadd7935d86cd79e4cc729798ea4"
   license "GPL-2.0-or-later"
+  revision 1
   head "https://github.com/debrouxl/tilp_and_gfm.git", branch: "master"
   livecheck do
     skip "Based on git commits, version number doesn't change"
