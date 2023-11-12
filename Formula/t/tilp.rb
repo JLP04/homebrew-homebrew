@@ -13,9 +13,8 @@ class Tilp < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/jlp04/homebrew"
-    sha256 monterey:     "2799450209990ec7b67fc4613efee6b21859f299251f0a016fcfa878ae11add8"
-    sha256 big_sur:      "5e82c9d583eb3ac44933b35f59d7b732be5fc2f1d48d6e9f30cee70ec62b4434"
-    sha256 x86_64_linux: "7b2fbc832a52ee79780ee96aae9d72ce274f9ce6c45d87baece78d2d467a278e"
+    sha256 monterey:     "a4237098c6b280938fa891bfb2dd305ea01908b6d94783026a26a44542e3a217"
+    sha256 x86_64_linux: "35edfbc8522049e0418c20e24094578d9c9f3d0ac91981a53cdbe5aa9cb9de6a"
   end
 
   depends_on "atk" => :build
