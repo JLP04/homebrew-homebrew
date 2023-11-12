@@ -1,10 +1,11 @@
 class Gfm < Formula
   desc "Group File Manager for TI handhelds"
   homepage "http://lpg.ticalc.org/prj_tilp"
-  url "https://github.com/debrouxl/tilp_and_gfm/archive/71eaa92de3962a8602a86275d35489f1aa087d9d.tar.gz"
+  url "https://github.com/debrouxl/tilp_and_gfm/archive/37917438fba03778dc591f4beb8aec7f8f7c67fd.tar.gz"
   version "1.09"
-  sha256 "41b202aed7e384c36d6c9dd32f8c9b3bb9beefaaa76be86387cd314f43403b3e"
+  sha256 "3aff5fc2ca818efc26c4042c63b350ac5119675c8e7b49d54afe82eefe9999b8"
   license "GPL-2.0-or-later"
+  revision 1
   head "https://github.com/debrouxl/tilp_and_gfm.git", branch: "master"
   livecheck do
     skip "Based on git commits, version number doesn't change"
@@ -51,7 +52,7 @@ class Gfm < Formula
   depends_on "tfdocgen" => :build
   depends_on "xorgproto" => :build
   depends_on "zstd" => :build
-  depends_on "libglade"
+  depends_on "jlp04/homebrew/libglade"
   depends_on "libticalcs"
   depends_on "libtifiles"
 
