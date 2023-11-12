@@ -13,9 +13,8 @@ class Gfm < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/jlp04/homebrew"
-    sha256 monterey:     "15071a3939018e6d50437637b8704ae33857e632e126875d536fb6fed3cd8566"
-    sha256 big_sur:      "f76894f9d492a96f6f5b835be3da7774620bb57152630e0133f7a03fe726ca80"
-    sha256 x86_64_linux: "cbf6e42f3791ae002be248f321255b37504f612020cc077c6eaa0b74cb4d7a5a"
+    sha256 monterey:     "588e18c0024ec788a5d59b801710bd31b3a8231d8970eb54943f36a7cf2bf922"
+    sha256 x86_64_linux: "4423622e087fa83265a9cbdebd39794ff74200b9f3ac5fc0eb0849d7a822e847"
   end
 
   depends_on "atk" => :build
