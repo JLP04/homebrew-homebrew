@@ -13,10 +13,9 @@ class Libticonv < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/jlp04/homebrew"
-    sha256 cellar: :any,                 ventura:      "77d93df810fb0ed11b9dd534b2ff92d8a0c1708d062e10387bd1c96e60a3411a"
-    sha256 cellar: :any,                 monterey:     "67a78e1febb41538b6051917ccfa54d3af8fdd9eb4442d8e47188978d6aa938e"
-    sha256 cellar: :any,                 big_sur:      "5a7420eb54cf2e06a4bf5bbd524a7c6a31498a131c11a068a421c3464efc5e4c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "9dbb41571352db6a8289bbc0f552046806ffcb5b5a26e16f7e1135effdc68be8"
+    sha256 cellar: :any,                 ventura:      "d05774049fa6d850d8594f3b42be191c5343d7a1e998cdf950743f3f7a0631a7"
+    sha256 cellar: :any,                 monterey:     "c5d86e51d8708e3e307900f83e5a4a7f4ed1a69c698a89083f13a6f3122fba30"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "dc7442aa40967e1758c0f53ebfc071099b2ab888cec85be454c2b1af283d3c7f"
   end
 
   depends_on "autoconf" => :build
