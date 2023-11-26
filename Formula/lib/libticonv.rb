@@ -1,11 +1,11 @@
 class Libticonv < Formula
   desc "TiConv library is a part of the TiLP project"
   homepage "http://lpg.ticalc.org/prj_tilp"
-  url "https://github.com/debrouxl/tilibs/archive/d4ba6ea0fbbf0024c36015d5e026231944785c58.tar.gz"
+  url "https://github.com/debrouxl/tilibs/archive/5ab36f38fd1e38036c54201e272653a6d4ac970a.tar.gz"
   version "1.1.6"
-  sha256 "e287864fc88dc3b41a89c8013ae99de38afa6c8756f2ed9fc6d7875c7a8d12b0"
+  sha256 "c7e84716d46d6383ab03e39932368a4344ecf75a63570109409e264b08349587"
   license "GPL-2.0-or-later"
-  revision 1
+  revision 2
   head "https://github.com/debrouxl/tilibs.git", branch: "master"
   livecheck do
     skip "Based on git commits, version number doesn't change"
