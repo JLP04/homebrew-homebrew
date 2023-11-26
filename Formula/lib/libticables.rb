@@ -13,9 +13,9 @@ class Libticables < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/jlp04/homebrew"
-    sha256 ventura:      "7d90655e8276f8d3fe2716e906b7a8d8e86334f9e0df5c33bbd7b0003f3fb5a5"
-    sha256 monterey:     "6505384a951f9286946f5003e3928c85bb664ce2f296eb6bd7019c0dab4b7d29"
-    sha256 x86_64_linux: "22df0d930b3b57fbf15b6e0e5d443808dcbffba38e101cd9ff8fa5ce8b0ca66b"
+    sha256 ventura:      "6c9d166a2a9e44ccf0665614abaed9e2b54703fcf5ee7c260130d61dbc179252"
+    sha256 monterey:     "ba5175fe4835452e5fd037ecb72d1c8db3e271971747cabb304a0909b53612d7"
+    sha256 x86_64_linux: "f9b5f6af9db59e1f778962bba2d425422e60d43f19e40d3bed490bef0144ec87"
   end
 
   depends_on "autoconf" => :build
