@@ -13,8 +13,8 @@ class Gfm < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/jlp04/homebrew"
-    sha256 monterey:     "588e18c0024ec788a5d59b801710bd31b3a8231d8970eb54943f36a7cf2bf922"
-    sha256 x86_64_linux: "4423622e087fa83265a9cbdebd39794ff74200b9f3ac5fc0eb0849d7a822e847"
+    rebuild 1
+    sha256 x86_64_linux: "783b07d4f488d503767dad3804ed75ee64c05de1400b289fc3216df2ea12a8f9"
   end
 
   depends_on "at-spi2-core" => :build
