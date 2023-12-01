@@ -17,7 +17,7 @@ class Gfm < Formula
     sha256 x86_64_linux: "4423622e087fa83265a9cbdebd39794ff74200b9f3ac5fc0eb0849d7a822e847"
   end
 
-  depends_on "atk" => :build
+  depends_on "at-spi2-core" => :build
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "cairo" => :build
