@@ -17,7 +17,7 @@ class Tilp < Formula
     sha256 x86_64_linux: "35edfbc8522049e0418c20e24094578d9c9f3d0ac91981a53cdbe5aa9cb9de6a"
   end
 
-  depends_on "atk" => :build
+  depends_on "at-spi2-core" => :build
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "cairo" => :build
