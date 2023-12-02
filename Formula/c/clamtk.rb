@@ -8,7 +8,7 @@ class Clamtk < Formula
     "BSD-3-Clause",
     any_of: ["GPL-1.0-or-later", "Artistic-2.0"],
   ]
-  revision 3
+  revision 4
   head "https://gitlab.com/dave_m/clamtk.git", branch: "master"
   livecheck do
     url :stable
@@ -112,8 +112,8 @@ class Clamtk < Formula
     end
 
     resource "Text::CSV" do
-      url "https://cpan.metacpan.org/authors/id/I/IS/ISHIGAKI/Text-CSV-2.03.tar.gz"
-      sha256 "48bbce9f234935a88595618e04dd141628246d650f2a726024df1c137e0b65fb"
+      url "https://cpan.metacpan.org/authors/id/I/IS/ISHIGAKI/Text-CSV-2.04.tar.gz"
+      sha256 "4f80122e4ea0b05079cad493e386564030f18c8d7b1f9af561df86985a653fe3"
     end
 
     resource "JSON" do
