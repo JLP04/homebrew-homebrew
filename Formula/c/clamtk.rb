@@ -1,14 +1,13 @@
 class Clamtk < Formula
   desc "Easy to use, light-weight, on-demand virus scanner for Linux systems"
   homepage "https://gitlab.com/dave_m/clamtk/-/wikis/home"
-  url "https://gitlab.com/dave_m/clamtk/-/archive/662124a88f9a3ce789f48ea4704d059922a207dd/clamtk-662124a88f9a3ce789f48ea4704d059922a207dd.tar.gz"
-  version "6.16"
-  sha256 "4c5b80c127c54b306135c6365d715c5a64c36f28c67a21b55eb70854e41217ab"
+  url "https://gitlab.com/dave_m/clamtk/-/archive/3dda83170bcb476c806e76289e8861471b05bfc6/clamtk-3dda83170bcb476c806e76289e8861471b05bfc6.tar.gz"
+  version "6.17"
+  sha256 "40b7cc2f885e81885761c89268efa599cc5346c31b54fb2068548d6842fd05b2"
   license all_of: [
     "BSD-3-Clause",
     any_of: ["GPL-1.0-or-later", "Artistic-2.0"],
   ]
-  revision 4
   head "https://gitlab.com/dave_m/clamtk.git", branch: "master"
   livecheck do
     url :stable
@@ -192,7 +191,7 @@ class Clamtk < Formula
         for d in /opt/perl5/perls/perl-*/lib/site_perl/5.*; do
           sudo mkdir -p "$d"/ClamTk
         done
-        sudo cp /usr/local/share/perl5/vendor_perl/ClamTk/*.pm /opt/perl5/perls/perl-*/lib/site_perl/5.*/ClamTk/
+        sudo cp $(brew --prefix)/share/perl5/vendor_perl/ClamTk/*.pm /opt/perl5/perls/perl-*/lib/site_perl/5.*/ClamTk/
         sudo cpan -i ExtUtils::Depends ExtUtils::PkgConfig Glib LWP::UserAgent HTTP::Message Clone URI HTTP::Date Try::Tiny LWP::Protocol::https Net::HTTP IO::Socket::SSL Net::SSLeay Text::CSV JSON Locale::gettext Gtk3 Cairo Cairo::GObject Glib::Object::Introspection
       EOS
     end
