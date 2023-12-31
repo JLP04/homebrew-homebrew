@@ -5,7 +5,7 @@ class Tilp < Formula
   version "1.19"
   sha256 "95b10e225e6a33b033891300dcc03d0f96c0eaf21c478b6f3b33e3f818d0a154"
   license "GPL-2.0-or-later"
-  revision 3
+  revision 4
   head "https://github.com/debrouxl/tilp_and_gfm.git", branch: "master"
   livecheck do
     skip "Based on git commits, version number doesn't change"
@@ -58,8 +58,8 @@ class Tilp < Formula
     depends_on "perl" => :build
 
     resource "XML::Parser" do
-      url "https://cpan.metacpan.org/authors/id/T/TO/TODDR/XML-Parser-2.46.tar.gz"
-      sha256 "d331332491c51cccfb4cb94ffc44f9cd73378e618498d4a37df9e043661c515d"
+      url "https://cpan.metacpan.org/authors/id/T/TO/TODDR/XML-Parser-2.47.tar.gz"
+      sha256 "ad4aae643ec784f489b956abe952432871a622d4e2b5c619e8855accbfc4d1d8"
     end
   end
 
