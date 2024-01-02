@@ -162,6 +162,7 @@ class Clamtk < Formula
       s.gsub! "/usr/share/pixmaps", HOMEBREW_PREFIX/"share/pixmaps"
       s.gsub! "/.local/share/Trash", "/.Trash" if OS.mac?
       s.gsub! "/usr/local", HOMEBREW_PREFIX
+      s.gsub! "/etc", HOMEBREW_PREFIX/"etc/clamav"
     end
     bin.install "clamtk" if build.with? "perlbrew"
     if build.without? "perlbrew"
