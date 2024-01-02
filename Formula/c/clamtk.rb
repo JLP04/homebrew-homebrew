@@ -1,9 +1,9 @@
 class Clamtk < Formula
   desc "Easy to use, light-weight, on-demand virus scanner for Linux systems"
   homepage "https://gitlab.com/dave_m/clamtk/-/wikis/home"
-  url "https://gitlab.com/dave_m/clamtk/-/archive/3dda83170bcb476c806e76289e8861471b05bfc6/clamtk-3dda83170bcb476c806e76289e8861471b05bfc6.tar.gz"
-  version "6.17"
-  sha256 "40b7cc2f885e81885761c89268efa599cc5346c31b54fb2068548d6842fd05b2"
+  url "https://gitlab.com/dave_m/clamtk/-/archive/ea06890a8b9110a4c7a3143ca02be7aa06d78982/clamtk-ea06890a8b9110a4c7a3143ca02be7aa06d78982.tar.gz"
+  version "6.18"
+  sha256 "816890c663ad3348cc4bc4d4ba71a79ba282ff727eb3f582bcdf6f26119b05e5"
   license all_of: [
     "BSD-3-Clause",
     any_of: ["GPL-1.0-or-later", "Artistic-2.0"],
@@ -161,6 +161,7 @@ class Clamtk < Formula
     inreplace "lib/App.pm" do |s|
       s.gsub! "/usr/share/pixmaps", HOMEBREW_PREFIX/"share/pixmaps"
       s.gsub! "/.local/share/Trash", "/.Trash" if OS.mac?
+      s.gsub! "/usr/local", HOMEBREW_PREFIX
     end
     bin.install "clamtk" if build.with? "perlbrew"
     if build.without? "perlbrew"
