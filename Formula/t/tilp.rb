@@ -69,8 +69,8 @@ class Tilp < Formula
   end
 
   resource("testfile2") do
-    url "https://education.ti.com/download/en/ed-tech/BCBFECEC5F4242B28E9AE89DA7C4BA59/19F6D328252E40C1BD528680D66B559D/TI84CEBundle-5.8.0.22.b84"
-    sha256 "6ba1de2fc18bcc212059f18d9021da2d2d1e9b39795dff821e59f29a957b452b"
+    url "https://education.ti.com/download/en/ed-tech/BCBFECEC5F4242B28E9AE89DA7C4BA59/57A7BDE9179548309AB0265093B9CB27/TI84CEBundle-5.8.1.12.b84"
+    sha256 "0bb80bac84b03d057180cf2460eeb59ac084a25d1cf363a3bcf5c6beebbfb511"
   end
 
   def install
@@ -96,6 +96,6 @@ class Tilp < Formula
     shell_output("#{bin}/tilp --help")
     shell_output("#{bin}/tilp --version")
     system "#{bin}/tilp", "-n"
-    system "#{bin}/tilp", "-n", "--cable", "Null", "--calc", "None", "CabriJr_CE.8ek", "TI84CEBundle-5.8.0.22.b84"
+    system "#{bin}/tilp", "-n", "--cable", "Null", "--calc", "None", "CabriJr_CE.8ek", "TI84CEBundle-5.8.1.12.b84"
   end
 end
