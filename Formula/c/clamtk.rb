@@ -1,14 +1,14 @@
 class Clamtk < Formula
   desc "Easy to use, light-weight, on-demand virus scanner for Linux systems"
   homepage "https://gitlab.com/dave_m/clamtk/-/wikis/home"
-  url "https://gitlab.com/dave_m/clamtk/-/archive/ad0fc0e18eb6ff532ffd8e36c6f6b76d716c49d3/clamtk-ea06890a8b9110a4c7a3143ca02be7aa06d78982.tar.gz"
+  url "https://gitlab.com/dave_m/clamtk/-/archive/c99e28bdc2a7d2fb50f2a5a65b7a3508f16efad8/clamtk-c99e28bdc2a7d2fb50f2a5a65b7a3508f16efad8.tar.gz"
   version "6.18"
-  sha256 "e4c4051946c02f64e202adf92ad0c1efab606303335991d7271ac13db23ce997"
+  sha256 "b6c12ef4d9f45253ca493e243f37ca306f256244247097ab92f07136bdeceff2"
   license all_of: [
     "BSD-3-Clause",
     any_of: ["GPL-1.0-or-later", "Artistic-2.0"],
   ]
-  revision 3
+  revision 4
   head "https://gitlab.com/dave_m/clamtk.git", branch: "master"
   livecheck do
     url :stable
