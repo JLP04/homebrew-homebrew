@@ -8,7 +8,7 @@ class Clamtk < Formula
     "BSD-3-Clause",
     any_of: ["GPL-1.0-or-later", "Artistic-2.0"],
   ]
-  revision 4
+  revision 5
   head "https://gitlab.com/dave_m/clamtk.git", branch: "master"
   livecheck do
     url :stable
@@ -61,8 +61,8 @@ class Clamtk < Formula
     end
 
     resource "LWP::UserAgent" do
-      url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/libwww-perl-6.73.tar.gz"
-      sha256 "41afb949b5ab95251bed45defcbd3811b75fc41d1b6ba48003fcd7704f86db3c"
+      url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/libwww-perl-6.74.tar.gz"
+      sha256 "2a49d361e79b3509d8150290901a4e3bea3603291887306a88cc93fbbfa5b19a"
     end
 
     resource "HTTP::Message" do
@@ -91,8 +91,8 @@ class Clamtk < Formula
     end
 
     resource "LWP::Protocol::https" do
-      url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/LWP-Protocol-https-6.11.tar.gz"
-      sha256 "0132ddbf03661565ca85050f2a5094fb9263cbbc3ccb1a4d9c41ac9bb083b917"
+      url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/LWP-Protocol-https-6.12.tar.gz"
+      sha256 "7dd36d3a4eacfa143a47a2bbbc56ea9413887e2d7376c1d35bbbb2be912b616c"
     end
 
     resource "Net::HTTP" do
@@ -101,8 +101,8 @@ class Clamtk < Formula
     end
 
     resource "IO::Socket::SSL" do
-      url "https://cpan.metacpan.org/authors/id/S/SU/SULLR/IO-Socket-SSL-2.084.tar.gz"
-      sha256 "a60d1e04e192363155329560498abd3412c3044295dae092d27fb6e445c71ce1"
+      url "https://cpan.metacpan.org/authors/id/S/SU/SULLR/IO-Socket-SSL-2.085.tar.gz"
+      sha256 "95b2f7c0628a7e246a159665fbf0620d0d7835e3a940f22d3fdd47c3aa799c2e"
     end
 
     resource "Net::SSLeay" do
