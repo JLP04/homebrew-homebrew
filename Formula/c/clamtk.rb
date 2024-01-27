@@ -1,14 +1,14 @@
 class Clamtk < Formula
   desc "Easy to use, light-weight, on-demand virus scanner for Linux systems"
   homepage "https://gitlab.com/dave_m/clamtk/-/wikis/home"
-  url "https://gitlab.com/dave_m/clamtk/-/archive/1fa2cda0dd1fcc727c4d04e65a397e74dc48f201/clamtk-1fa2cda0dd1fcc727c4d04e65a397e74dc48f201.tar.gz"
+  url "https://gitlab.com/dave_m/clamtk/-/archive/937251b43140cc2a756959edbc0ec0f01dac2551/clamtk-937251b43140cc2a756959edbc0ec0f01dac2551.tar.gz"
   version "6.18"
-  sha256 "0b25fa71ba5e942198d39af41e3d325a14480b54a61e56d0ea3da7ea53a49626"
+  sha256 "a3d85a3be8cac4985a4b84656a1a6f2f81d9fc1a278f29999e503758665c92ba"
   license all_of: [
     "BSD-3-Clause",
     any_of: ["GPL-1.0-or-later", "Artistic-2.0"],
   ]
-  revision 9
+  revision 10
   head "https://gitlab.com/dave_m/clamtk.git", branch: "master"
   livecheck do
     url :stable
@@ -76,8 +76,8 @@ class Clamtk < Formula
     end
 
     resource "URI" do
-      url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/URI-5.24.tar.gz"
-      sha256 "466dd5a40b2c8e99d53692dc49b971561d5d7c2a30814e5ff0b63a4a25e2aaef"
+      url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/URI-5.25.tar.gz"
+      sha256 "ef61941da09fff2503cea3692c4f2fc48c0e4442486e2a28345cb32d44d0d271"
     end
 
     resource "HTTP::Date" do
