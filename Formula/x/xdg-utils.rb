@@ -1,13 +1,13 @@
 class XdgUtils < Formula
   desc "Tools allowing applications to easily integrate with the desktop environment"
   homepage "https://www.freedesktop.org/wiki/Software/xdg-utils/"
-  url "https://portland.freedesktop.org/download/xdg-utils-1.1.3.tar.gz"
-  sha256 "d798b08af8a8e2063ddde6c9fa3398ca81484f27dec642c5627ffcaa0d4051d9"
+  url "https://gitlab.freedesktop.org/xdg/xdg-utils/-/archive/v1.2.1/xdg-utils-v1.2.1.tar.gz"
+  sha256 "f6b648c064464c2636884c05746e80428110a576f8daacf46ef2e554dcfdae75"
   license "MIT"
   head "https://gitlab.freedesktop.org/xdg/xdg-utils.git", branch: "master"
   livecheck do
-    url "http://portland.freedesktop.org/download/"
-    regex(/href=.*?xdg-utils[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -22,7 +22,8 @@ class XdgUtils < Formula
   depends_on "xmlto" => :build
 
   on_linux do
-    depends_on "w3m" => :test
+    depends_on "lynx" => :test
+    depends_on "mailutils" => :test
   end
 
   def install
@@ -34,6 +35,8 @@ class XdgUtils < Formula
 
   test do
     ENV["HOME"] = testpath
+    ENV["BROWSER"] = "lynx" if OS.linux?
+    ENV["MAILER"] = "mail" if OS.linux?
     (testpath/"desktop_icon_install.desktop").write <<~EOS
       [Desktop Entry]
       Version=1.0
@@ -52,11 +55,13 @@ class XdgUtils < Formula
       Hello.
     EOS
     system "#{bin}/xdg-open", testpath/"test.txt"
-    system "#{bin}/xdg-open", "http://portland.freedesktop.org/wiki/"
+    system "#{bin}/xdg-open", "https://www.freedesktop.org/wiki/Software/xdg-utils/"
     (testpath/"test.html").write <<~EOS
       <html><body>Hello.</body></html>
     EOS
     system "#{bin}/xdg-open", testpath/"test.html"
     system "#{bin}/xdg-email", "'Jeremy White <jwhite@example.com>'" if OS.linux?
+    system "#{bin}/xdg-mime", "query", "default", "text/plain"
+    system "#{bin}/xdg-settings", "get", "default-web-browser" if OS.linux?
   end
 end
