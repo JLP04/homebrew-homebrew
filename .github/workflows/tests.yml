@@ -24,16 +24,15 @@ jobs:
           restore-keys: ${{ runner.os }}-rubygems-
 
       - env:
-          HOMEBREW_NO_INSTALL_FROM_API: 1 
-        run: brew test-bot --only-cleanup-before
+          HOMEBREW_NO_INSTALL_FROM_API: 1
+        run: brew update --auto-update
 
-      - env:
-          HOMEBREW_NO_INSTALL_FROM_API: 1 
-        run: brew test-bot --only-setup
 
-      - env:
-          HOMEBREW_NO_INSTALL_FROM_API: 1 
-        run: brew test-bot --only-tap-syntax
+      - run: brew test-bot --only-cleanup-before
+
+      - run: brew test-bot --only-setup
+
+      - run: brew test-bot --only-tap-syntax
 
       - env:
           HOMEBREW_NO_INSTALL_FROM_API: 1 
