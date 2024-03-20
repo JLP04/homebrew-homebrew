@@ -31,7 +31,7 @@ jobs:
 
       - env:
           HOMEBREW_NO_INSTALL_FROM_API: 1 
-        run: brew test-bot -d --only-formulae --root-url=https://ghcr.io/v2/jlp04/homebrew
+        run: /usr/bin/env /usr/bin/git -C /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/jlp04/homebrew-homebrew fetch origin +refs/heads/master && brew deps --full-name --include-build --include-test clamtk && brew test-bot -d --only-formulae --root-url=https://ghcr.io/v2/jlp04/homebrew
         if: github.event_name == 'pull_request'
 
       - name: Upload bottles as artifact
