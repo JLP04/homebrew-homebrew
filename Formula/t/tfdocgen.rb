@@ -26,11 +26,6 @@ class Tfdocgen < Formula
   depends_on "pkg-config" => :build
   depends_on "glib"
 
-  resource "testdocs" do
-    url "https://github.com/debrouxl/tilibs/archive/27586cc02a07777836a7974f020bdfdb43789b83.tar.gz"
-    sha256 "85e6e9c716d4247ae8e0eb6813738a131cb92cf938fc56078979e1030f05ab08"
-  end
-
   def install
     Dir.chdir("trunk") if build.stable?
     system "autoreconf", "-i", "-f"
@@ -40,6 +35,11 @@ class Tfdocgen < Formula
   end
 
   test do
+    resource("testfile") do
+      url "https://education.ti.com/download/en/ed-tech/55EDE969CFD2484487B4556641BDDC4E/B38964FB6AF244DFA4674BA19128646C/CabriJr_CE.8ek"
+      sha256 "6e28f09a50293a14c49ce438d2fa336392c538d44c4b5ef18964e239825d1303"
+    end
+
     shell_output("#{bin}/tfdocgen --version")
     shell_output("#{bin}/tfdocgen --help")
     resource("testdocs").stage testpath/"libs"

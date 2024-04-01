@@ -64,16 +64,6 @@ class Tilp < Formula
     end
   end
 
-  resource("testfile1") do
-    url "https://education.ti.com/download/en/ed-tech/55EDE969CFD2484487B4556641BDDC4E/B38964FB6AF244DFA4674BA19128646C/CabriJr_CE.8ek"
-    sha256 "6e28f09a50293a14c49ce438d2fa336392c538d44c4b5ef18964e239825d1303"
-  end
-
-  resource("testfile2") do
-    url "https://education.ti.com/download/en/ed-tech/BCBFECEC5F4242B28E9AE89DA7C4BA59/57A7BDE9179548309AB0265093B9CB27/TI84CEBundle-5.8.1.12.b84"
-    sha256 "0bb80bac84b03d057180cf2460eeb59ac084a25d1cf363a3bcf5c6beebbfb511"
-  end
-
   def install
     if OS.linux?
       ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
@@ -92,6 +82,16 @@ class Tilp < Formula
   end
 
   test do
+    resource("testfile1") do
+      url "https://education.ti.com/download/en/ed-tech/55EDE969CFD2484487B4556641BDDC4E/B38964FB6AF244DFA4674BA19128646C/CabriJr_CE.8ek"
+      sha256 "6e28f09a50293a14c49ce438d2fa336392c538d44c4b5ef18964e239825d1303"
+    end
+
+    resource("testfile2") do
+      url "https://education.ti.com/download/en/ed-tech/BCBFECEC5F4242B28E9AE89DA7C4BA59/57A7BDE9179548309AB0265093B9CB27/TI84CEBundle-5.8.1.12.b84"
+      sha256 "0bb80bac84b03d057180cf2460eeb59ac084a25d1cf363a3bcf5c6beebbfb511"
+    end
+
     resource("testfile1").stage testpath
     resource("testfile2").stage testpath
     shell_output("#{bin}/tilp --help")

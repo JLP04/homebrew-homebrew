@@ -28,11 +28,6 @@ class Libtifiles < Formula
   depends_on "libarchive"
   depends_on "libticonv"
 
-  resource("testfile") do
-    url "https://education.ti.com/download/en/ed-tech/55EDE969CFD2484487B4556641BDDC4E/B38964FB6AF244DFA4674BA19128646C/CabriJr_CE.8ek"
-    sha256 "6e28f09a50293a14c49ce438d2fa336392c538d44c4b5ef18964e239825d1303"
-  end
-
   def install
     Dir.chdir("libtifiles/trunk")
     system "autoreconf", "-i", "-f"
@@ -43,6 +38,11 @@ class Libtifiles < Formula
   end
 
   test do
+    resource("testfile") do
+      url "https://education.ti.com/download/en/ed-tech/55EDE969CFD2484487B4556641BDDC4E/B38964FB6AF244DFA4674BA19128646C/CabriJr_CE.8ek"
+      sha256 "6e28f09a50293a14c49ce438d2fa336392c538d44c4b5ef18964e239825d1303"
+    end
+
     (testpath/"test.c").write <<~EOS
       #include <tilp2/tifiles.h>
 
