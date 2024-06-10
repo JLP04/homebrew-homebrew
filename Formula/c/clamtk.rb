@@ -192,10 +192,10 @@ class Clamtk < Formula
     if build.with? "perlbrew"
       <<~EOS
         If you want to install ClamTk to a perlbrew perl, run the following (you will need to install cairo, pkg-config, and vtk to build the perl modules):
-        for d in /opt/perl5/perls/perl-*/lib/site_perl/5.*; do
+        for d in "$PERLBREW_ROOT"/perls/perl-*/lib/site_perl/5.*; do
           sudo mkdir -p "$d"/ClamTk
+          sudo cp $(brew --prefix)/share/perl5/vendor_perl/ClamTk/*.pm "$d"/ClamTk/
         done
-        sudo cp $(brew --prefix)/share/perl5/vendor_perl/ClamTk/*.pm /opt/perl5/perls/perl-*/lib/site_perl/5.*/ClamTk/
         sudo cpan -i ExtUtils::Depends ExtUtils::PkgConfig Glib LWP::UserAgent HTTP::Message Clone URI HTTP::Date Try::Tiny LWP::Protocol::https Net::HTTP IO::Socket::SSL Net::SSLeay Text::CSV JSON Locale::gettext Gtk3 Cairo Cairo::GObject Glib::Object::Introspection
       EOS
     end
