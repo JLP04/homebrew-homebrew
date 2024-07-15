@@ -13,8 +13,19 @@ class Libglade < Formula
   end
 
   depends_on "pkg-config" => :build
+  depends_on "at-spi2-core"
+  depends_on "gdk-pixbuf"
+  depends_on "glib"
   depends_on "gtk+"
-  depends_on "libxml2"
+  depends_on "pango"
+
+  uses_from_macos "libxml2"
+
+  on_macos do
+    depends_on "cairo"
+    depends_on "gettext"
+    depends_on "harfbuzz"
+  end
 
   def install
     ENV.append "LDFLAGS", "-lgmodule-2.0"
