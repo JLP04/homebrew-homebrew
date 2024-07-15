@@ -27,6 +27,10 @@ class Libticables < Formula
   depends_on "glib"
   depends_on "libusb"
 
+  on_ventura do
+    depends_on "gettext"
+  end
+
   def install
     Dir.chdir("libticables/trunk")
     system "autoreconf", "-i", "-f"
