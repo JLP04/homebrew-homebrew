@@ -28,6 +28,10 @@ class Libtifiles < Formula
   depends_on "libarchive"
   depends_on "libticonv"
 
+  on_macos do
+    depends_on "gettext"
+  end
+
   def install
     Dir.chdir("libtifiles/trunk")
     system "autoreconf", "-i", "-f"
