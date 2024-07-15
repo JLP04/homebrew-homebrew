@@ -24,11 +24,16 @@ class Libticalcs < Formula
   depends_on "libtool" => :build
   depends_on "pkg-config" => [:build, :test]
   depends_on "tfdocgen" => :build
-  depends_on "libarchive" => :test
   depends_on "glib"
   depends_on "libticables"
   depends_on "libticonv"
   depends_on "libtifiles"
+
+  uses_from_macos "libarchive" => :test
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   def install
     Dir.chdir("libticalcs/trunk")
