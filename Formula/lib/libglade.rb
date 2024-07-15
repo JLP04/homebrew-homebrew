@@ -7,9 +7,11 @@ class Libglade < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/jlp04/homebrew"
-    sha256 ventura:      "fc41656da72d1c1997765d9c3adc20febd0342dd2c40c350ccbcc35dbc3afd7a"
-    sha256 monterey:     "0a5e15b612cd88e65280916030f93b2b028bbfeaacd6770c264955076a07769b"
-    sha256 x86_64_linux: "18d0a9f576f61711643e50a7a4d3365013e66895cafd392d82d41d7a91085273"
+    rebuild 1
+    sha256 arm64_sonoma: "c399d19099304378a33a0218d5f1d65ea1dc22d11ad85152a07aa3c180ae12e0"
+    sha256 ventura:      "9c492d18483c8bd2b6c114359686f9a09fff6e8fe3bd670dd3ac35689d279211"
+    sha256 monterey:     "ad5a6cbc2dd9d93ed46db69bd5f86b119c11a7658b2d81d1362b18b8a4e908aa"
+    sha256 x86_64_linux: "61198ad9be7410cf961b742c2ac8ab30e03dc263ba3d356d1f5ee838a5732408"
   end
 
   depends_on "pkg-config" => :build
