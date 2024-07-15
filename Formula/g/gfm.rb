@@ -17,24 +17,18 @@ class Gfm < Formula
     sha256 x86_64_linux: "783b07d4f488d503767dad3804ed75ee64c05de1400b289fc3216df2ea12a8f9"
   end
 
-  depends_on "at-spi2-core" => :build
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "cairo" => :build
   depends_on "fontconfig" => :build
   depends_on "freetype" => :build
   depends_on "fribidi" => :build
-  depends_on "gdk-pixbuf" => :build
   depends_on "gettext" => :build
-  depends_on "glib" => :build
   depends_on "graphite2" => :build
-  depends_on "gtk+" => :build
   depends_on "harfbuzz" => :build
-  depends_on "libarchive" => :build
   depends_on "libjpeg" => :build
   depends_on "libpng" => :build
   depends_on "libticables" => :build
-  depends_on "libticonv" => :build
   depends_on "libtiff" => :build
   depends_on "libtool" => :build
   depends_on "libusb" => :build
@@ -51,9 +45,23 @@ class Gfm < Formula
   depends_on "tfdocgen" => :build
   depends_on "xorgproto" => :build
   depends_on "zstd" => :build
+  depends_on "at-spi2-core"
+  depends_on "gdk-pixbuf"
+  depends_on "glib"
+  depends_on "gtk+"
   depends_on "jlp04/homebrew/libglade"
   depends_on "libticalcs"
+  depends_on "libticonv"
   depends_on "libtifiles"
+
+  uses_from_macos "libarchive" => :build
+
+  on_macos do
+    depends_on "cairo"
+    depends_on "gettext"
+    depends_on "harfbuzz"
+    depends_on "pango"
+  end
 
   def install
     Dir.chdir("gfm/trunk")
