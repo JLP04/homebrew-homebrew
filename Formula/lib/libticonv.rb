@@ -25,6 +25,10 @@ class Libticonv < Formula
   depends_on "tfdocgen" => :build
   depends_on "glib"
 
+  on_macos do
+    depends_on "gettext"
+  end
+
   def install
     Dir.chdir("libticonv/trunk")
     system "autoreconf", "-i", "-f"
