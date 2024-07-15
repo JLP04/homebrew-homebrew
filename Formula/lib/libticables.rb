@@ -27,7 +27,7 @@ class Libticables < Formula
   depends_on "glib"
   depends_on "libusb"
 
-  on_ventura do
+  on_macos do
     depends_on "gettext"
   end
 
