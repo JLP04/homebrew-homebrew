@@ -18,20 +18,16 @@ class Tilp < Formula
     sha256 x86_64_linux: "8302e2cf24a65f75bf89cb42d0f7cce1dfff90b4168b298ec734c7a096732f4b"
   end
 
-  depends_on "at-spi2-core" => :build
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "cairo" => :build
   depends_on "fontconfig" => :build
   depends_on "freetype" => :build
   depends_on "fribidi" => :build
-  depends_on "gdk-pixbuf" => :build
   depends_on "gettext" => :build
-  depends_on "glib" => :build
   depends_on "graphite2" => :build
   depends_on "harfbuzz" => :build
   depends_on "intltool" => :build
-  depends_on "libarchive" => :build
   depends_on "libjpeg" => :build
   depends_on "libpng" => :build
   depends_on "libtiff" => :build
@@ -43,20 +39,33 @@ class Tilp < Formula
   depends_on "libxdmcp" => :build
   depends_on "libxext" => :build
   depends_on "libxrender" => :build
-  depends_on "pango" => :build
   depends_on "pixman" => :build
   depends_on "pkg-config" => :build
   depends_on "tfdocgen" => :build
   depends_on "xorgproto" => :build
   depends_on "zstd" => :build
+  depends_on "at-spi2-core"
+  depends_on "gdk-pixbuf"
+  depends_on "glib"
   depends_on "gtk+"
   depends_on "libticables"
   depends_on "libticalcs"
   depends_on "libticonv"
   depends_on "libtifiles"
+  depends_on "pango"
+
+  uses_from_macos "libarchive" => :build
+
+  on_macos do
+    depends_on "cairo"
+    depends_on "gettext"
+    depends_on "harfbuzz"
+  end
 
   on_linux do
     depends_on "perl" => :build
+    depends_on "expat"
+    depends_on "zlib"
 
     resource "XML::Parser" do
       url "https://cpan.metacpan.org/authors/id/T/TO/TODDR/XML-Parser-2.47.tar.gz"
