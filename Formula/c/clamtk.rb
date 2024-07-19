@@ -42,8 +42,9 @@ class Clamtk < Formula
   depends_on "glib"
   depends_on "gobject-introspection"
   depends_on "gtk+3"
-  depends_on "openssl@3"
   depends_on "perl"
+
+  uses_from_macos "openssl"
 
   on_macos do
     depends_on "freetype"
