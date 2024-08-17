@@ -48,7 +48,7 @@ class Tfdocgen < Formula
     shell_output("#{bin}/tfdocgen --help")
     resource("testdocs").stage testpath/"libs"
     Dir.chdir("#{testpath}/libs/libticables/trunk")
-    system "#{bin}/tfdocgen", "./"
+    system bin/"tfdocgen", "./"
     assert_predicate testpath/"libs/libticables/trunk/docs/html/api.html", :exist?
   end
 end
