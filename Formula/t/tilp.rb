@@ -107,7 +107,7 @@ class Tilp < Formula
     resource("testfile2").stage testpath
     shell_output("#{bin}/tilp --help")
     shell_output("#{bin}/tilp --version")
-    system "#{bin}/tilp", "-n"
-    system "#{bin}/tilp", "-n", "--cable", "Null", "--calc", "None", "CabriJr_CE.8ek", "TI84CEBundle-5.8.1.12.b84"
+    system bin/"tilp", "-n"
+    system bin/"tilp", "-n", "--cable", "Null", "--calc", "None", "CabriJr_CE.8ek", "TI84CEBundle-5.8.1.12.b84"
   end
 end
