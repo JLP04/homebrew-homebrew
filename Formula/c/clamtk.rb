@@ -8,7 +8,7 @@ class Clamtk < Formula
     "BSD-3-Clause",
     any_of: ["GPL-1.0-or-later", "Artistic-2.0"],
   ]
-  revision 23
+  revision 24
   head "https://gitlab.com/dave_m/clamtk.git", branch: "master"
   livecheck do
     url :stable
@@ -77,8 +77,8 @@ class Clamtk < Formula
     end
 
     resource "HTTP::Message" do
-      url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/HTTP-Message-6.46.tar.gz"
-      sha256 "e27443434150d2d1259bb1e5c964429f61559b0ae34b5713090481994936e2a5"
+      url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/HTTP-Message-7.00.tar.gz"
+      sha256 "5afa95eb6ed1c632e81656201a2738e2c1bc6cbfae2f6d82728e2bb0b519c1dc"
     end
 
     resource "Clone" do
