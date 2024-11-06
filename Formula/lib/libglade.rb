@@ -46,7 +46,7 @@ class Libglade < Formula
       }
     EOS
     ENV.libxml2
-    atk = Formula["atk"]
+    atk = Formula["at-spi2-core"]
     cairo = Formula["cairo"]
     fontconfig = Formula["fontconfig"]
     freetype = Formula["freetype"]
