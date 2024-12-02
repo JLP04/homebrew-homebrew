@@ -1,11 +1,11 @@
 class Gfm < Formula
   desc "Group File Manager for TI handhelds"
   homepage "http://lpg.ticalc.org/prj_tilp"
-  url "https://github.com/debrouxl/tilp_and_gfm/archive/37917438fba03778dc591f4beb8aec7f8f7c67fd.tar.gz"
+  url "https://github.com/debrouxl/tilp_and_gfm/archive/0a525619a07d92734b5eb5ba1d47c56f4de37458.tar.gz"
   version "1.09"
-  sha256 "3aff5fc2ca818efc26c4042c63b350ac5119675c8e7b49d54afe82eefe9999b8"
+  sha256 "fd638afc5eb7104be54d465137c22fafb024cef465837691fe66234d0d429513"
   license "GPL-2.0-or-later"
-  revision 1
+  revision 2
   head "https://github.com/debrouxl/tilp_and_gfm.git", branch: "master"
   livecheck do
     skip "Based on git commits, version number doesn't change"
