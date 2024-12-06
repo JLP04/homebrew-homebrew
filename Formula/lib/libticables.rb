@@ -24,7 +24,7 @@ class Libticables < Formula
   depends_on "automake" => :build
   depends_on "gettext" => :build
   depends_on "libtool" => :build
-  depends_on "pkg-config" => [:build, :test]
+  depends_on "pkgconf" => [:build, :test]
   depends_on "tfdocgen" => :build
   depends_on "glib"
   depends_on "libusb"
