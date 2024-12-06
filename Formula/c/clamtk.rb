@@ -33,7 +33,7 @@ class Clamtk < Formula
   depends_on "libxext" => :build
   depends_on "libxrender" => :build
   depends_on "pixman" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "vtk" => :build
   depends_on "xorgproto" => :build
   depends_on "cairo"
@@ -198,7 +198,7 @@ class Clamtk < Formula
   def caveats
     if build.with? "perlbrew"
       <<~EOS
-        If you want to install ClamTk to a perlbrew perl, run the following (you will need to install cairo, pkg-config, and vtk to build the perl modules):
+        If you want to install ClamTk to a perlbrew perl, run the following (you will need to install cairo, pkgconf, and vtk to build the perl modules):
         for d in "$PERLBREW_ROOT"/perls/perl-*/lib/site_perl/5.*; do
           sudo mkdir -p "$d"/ClamTk
           sudo cp $(brew --prefix)/share/perl5/vendor_perl/ClamTk/*.pm "$d"/ClamTk/
