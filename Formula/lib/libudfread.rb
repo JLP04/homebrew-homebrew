@@ -21,7 +21,7 @@ class Libudfread < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
-  depends_on "pkg-config" => :test
+  depends_on "pkgconf" => :test
 
   def install
     system "autoreconf", "-i", "-f"
