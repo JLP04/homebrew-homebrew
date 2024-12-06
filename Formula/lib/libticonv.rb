@@ -23,7 +23,7 @@ class Libticonv < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
-  depends_on "pkg-config" => [:build, :test]
+  depends_on "pkgconf" => [:build, :test]
   depends_on "tfdocgen" => :build
   depends_on "glib"
 
