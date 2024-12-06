@@ -13,11 +13,11 @@ class Libticonv < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/jlp04/homebrew"
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma: "6addb1f083aa28c119555eb266b8a117714ea41e984d335505a052ad050f4c2e"
-    sha256 cellar: :any,                 ventura:      "53e4dfa7df2d2506e9e7eb45dffad5f664228d9265c4f5146071330f1a26bf96"
-    sha256 cellar: :any,                 monterey:     "b3e8fc0828729e1ae3083faf8a1e0dcac38452f4bc3ed56d6fb95e4b85f9ecae"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "5e28f70ab26d9cdee36714e3fe6b16bdf6132b8018d9b317437f3810f0e4446f"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_sequoia: "a083edaca59851945965b50a3a2b6571a0f073ca6da0654132b3f42d22050603"
+    sha256 cellar: :any,                 arm64_sonoma:  "6d2d5b270282e6cac602c4921a9caa626e123407c2babc49703373d0307e9604"
+    sha256 cellar: :any,                 ventura:       "5dc48dd6adee5001604f4475539f5c9bce26258dbeb44ac08846386651bfaef3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6cb899987e036896932a91b2155f0095463ff428e7c1adf89b0b17380b1104ca"
   end
 
   depends_on "autoconf" => :build
