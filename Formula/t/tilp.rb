@@ -28,7 +28,7 @@ class Tilp < Formula
   depends_on "graphite2" => :build
   depends_on "harfbuzz" => :build
   depends_on "intltool" => :build
-  depends_on "libjpeg" => :build
+  depends_on "jpeg" => :build
   depends_on "libpng" => :build
   depends_on "libtiff" => :build
   depends_on "libtool" => :build
@@ -40,7 +40,7 @@ class Tilp < Formula
   depends_on "libxext" => :build
   depends_on "libxrender" => :build
   depends_on "pixman" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "tfdocgen" => :build
   depends_on "xorgproto" => :build
   depends_on "zstd" => :build
