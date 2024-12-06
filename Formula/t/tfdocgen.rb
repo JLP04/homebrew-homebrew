@@ -12,11 +12,11 @@ class Tfdocgen < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/jlp04/homebrew"
-    rebuild 7
-    sha256 cellar: :any,                 arm64_sonoma: "96945693415c56761e41526f4f005484b6d6186537e445d2b1ab7aac1efc1604"
-    sha256 cellar: :any,                 ventura:      "634cf1a882fd5ccad3c183f18798e92c0c4170738352f93e821f614b98151299"
-    sha256 cellar: :any,                 monterey:     "cd7a826eeb7bc400b19ea03461e290dde56bd18f2993b687288b7f21cb128a77"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "b276cfb17ecbc989313286a89b9e79fede681135d52b6d7de0250a17efae83ed"
+    rebuild 8
+    sha256 cellar: :any,                 arm64_sequoia: "d27f612dc23cf485809d8420edc58dcb5308233b0e615cd5562f2da2efca7580"
+    sha256 cellar: :any,                 arm64_sonoma:  "586fa284ee0fe3e5d6285f70632c273822e61983139516e09984df75ec198849"
+    sha256 cellar: :any,                 ventura:       "586af2987bc09d944f7f54258c60005943190b31083522a6a72eecac1f15c00e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6dfd491839ac471afc710fb27a6451c075d63c67870e38ccc3ba4d79471b52e8"
   end
 
   depends_on "autoconf" => :build
