@@ -12,10 +12,11 @@ class XdgUtils < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/jlp04/homebrew"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "9ad5ab4a43571de5dfa3e8b5b2cb9fdcb06bb086f7810c5289ce2a64f5bfd465"
-    sha256 cellar: :any_skip_relocation, ventura:      "b3cfc1224f401a909df6580d8b02f790469a02273553474ae518e4e5f93ccf46"
-    sha256 cellar: :any_skip_relocation, monterey:     "39f350de5bf2ef6b2436ef09d5387d6d25dcd01262abf61973da696b081e2ab7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "a91ed0ac27a48b879c39a8b05afc09da81676ec7aa9e098252fbf8ba61b2d9fe"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "33ecfb2061c39ee7bfaa5830f2a63cce6a205dd73fa928c16d4d99b72b08d8c5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5f25772a8d4dd5745d06c5d918ac5f697efcf39e6e9aa414ba280fa3e27b4111"
+    sha256 cellar: :any_skip_relocation, ventura:       "d45a7b6df5049d025754b5f4d16010cd6404a86cd7bd04e7382c59fdee3a32ce"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c58ea1d001712eea2f7ddb17ce701aae702c2bc765ffac419a10794490795784"
   end
 
   depends_on "lynx" => :build
