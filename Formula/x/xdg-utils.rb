@@ -49,7 +49,7 @@ class XdgUtils < Formula
       StartupNotify=false
     EOS
     system "#{bin}/xdg-desktop-icon", "install", "--novendor", "desktop_icon_install.desktop"
-    assert_predicate testpath/"Desktop/desktop_icon_install.desktop", :exist?
+    assert_path_exists testpath/"Desktop/desktop_icon_install.desktop"
     system "#{bin}/xdg-desktop-icon", "uninstall", "desktop_icon_install.desktop"
     (testpath/"test.txt").write <<~EOS
       Hello.
