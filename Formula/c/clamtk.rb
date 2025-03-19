@@ -8,7 +8,7 @@ class Clamtk < Formula
     "BSD-3-Clause",
     any_of: ["GPL-1.0-or-later", "Artistic-2.0"],
   ]
-  revision 29
+  revision 30
   head "https://gitlab.com/dave_m/clamtk.git", branch: "master"
   livecheck do
     url :stable
@@ -56,8 +56,8 @@ class Clamtk < Formula
   if build.without? "perlbrew"
 
     resource "ExtUtils::Depends" do
-      url "https://cpan.metacpan.org/authors/id/X/XA/XAOC/ExtUtils-Depends-0.8001.tar.gz"
-      sha256 "673c4387e7896c1a216099c1fbb3faaa7763d7f5f95a1a56a60a2a2906c131c5"
+      url "https://cpan.metacpan.org/authors/id/E/ET/ETJ/ExtUtils-Depends-0.8002.tar.gz"
+      sha256 "02b9a46450050ce19b325b23e46bb4ec644229d7f2d95044f67a86d8efacdc29"
     end
 
     resource "ExtUtils::PkgConfig" do
