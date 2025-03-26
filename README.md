@@ -6,7 +6,7 @@
 
 Or `brew tap jlp04/homebrew` and then `brew install <formula>`.
 
-Or, in a [`brew bundle`](https://github.com/Homebrew/homebrew-bundle) `Brewfile`:
+Or, in a `brew bundle` `Brewfile`:
 
 ```ruby
 tap "jlp04/homebrew"
