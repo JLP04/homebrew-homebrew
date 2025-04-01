@@ -12,10 +12,10 @@ class Libudfread < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/jlp04/homebrew"
-    sha256 cellar: :any,                 arm64_sequoia: "df06b1f376f856b8db5f86fcf2a3e34e6e2b0a8e8b5e4c88579b96cdf8141520"
-    sha256 cellar: :any,                 arm64_sonoma:  "243971efb65485cf6ab41bfce48f9f15e89290bd872b2a193912624c85ec4e86"
-    sha256 cellar: :any,                 ventura:       "42a467d59087fde666c20d13582549fb54946999215a380868afed941df5672f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "11bba0b7b6ed38763e8b54c5d61dc76fa78ae7b45dc2075c2988e1a1627bcca9"
+    sha256 cellar: :any,                 arm64_sequoia: "2503af3f963044f09e4363eedf3604f5553a9347ef2977fc968a2865f6d65995"
+    sha256 cellar: :any,                 arm64_sonoma:  "252d7b0db25617c089e80d1025fc3b94c1eddb4d606a0bc10ba4308f9a54378d"
+    sha256 cellar: :any,                 ventura:       "5a2e1283fd291f2bfa27dc6f0f9328fdb791a4fa1309d35b1532403e7c7b5b81"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dec6d611c0f8d13ebffef190c52cf3a9ea59cc9003824ce7c8b9b22a26a15900"
   end
 
   depends_on "autoconf" => :build
