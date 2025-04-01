@@ -1,11 +1,10 @@
 class Libudfread < Formula
   desc "Library for reading UDF from raw devices and image files"
   homepage "https://code.videolan.org/videolan/libudfread/"
-  url "https://code.videolan.org/videolan/libudfread/-/archive/dbb8d2c22e2f15f4f6c99c1904ff4e8d4c025b28/libudfread-dbb8d2c22e2f15f4f6c99c1904ff4e8d4c025b28.tar.gz"
-  version "1.1.2"
-  sha256 "4c806480fa16b082cdaa00aff016d0a9ae81861fb399360616c60ff7a5254ff1"
+  url "https://code.videolan.org/videolan/libudfread/-/archive/a089d1bd4118f5072a1dbb76f459dc41bb106bb5/libudfread-a089d1bd4118f5072a1dbb76f459dc41bb106bb5.tar.gz"
+  version "1.2.0"
+  sha256 "756b4e7b2f10fce77928c0e2705d0b7d29a204b9fdf3b15673f806c623359413"
   license "LGPL-2.1-only"
-  revision 1
   head "https://code.videolan.org/videolan/libudfread.git", branch: "master"
   livecheck do
     url :head
