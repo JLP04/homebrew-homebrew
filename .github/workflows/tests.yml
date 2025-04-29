@@ -8,12 +8,20 @@ jobs:
   test-bot:
     strategy:
       matrix:
-        os: [ubuntu-22.04, macos-13, macos-14, macos-15]
+        os: [ ubuntu-22.04, macos-13, macos-14, macos-15 ]
     runs-on: ${{ matrix.os }}
+    permissions:
+      actions: read
+      checks: read
+      contents: read
+      packages: read
+      pull-requests: read
     steps:
       - name: Set up Homebrew
         id: set-up-homebrew
         uses: Homebrew/actions/setup-homebrew@master
+        with:
+          token: ${{ github.token }}
 
       - name: Cache Homebrew Bundler RubyGems
         id: cache
@@ -23,21 +31,26 @@ jobs:
           key: ${{ matrix.os }}-rubygems-${{ steps.set-up-homebrew.outputs.gems-hash }}
           restore-keys: ${{ matrix.os }}-rubygems-
 
-      - env:
-          HOMEBREW_NO_INSTALL_FROM_API: 1
-        run: brew update --auto-update
-
-
       - run: brew test-bot --only-cleanup-before
 
       - run: brew test-bot --only-setup
 
       - run: brew test-bot --only-tap-syntax
 
-      - env:
-          HOMEBREW_NO_INSTALL_FROM_API: 1 
-        run: brew test-bot --only-formulae --root-url='https://ghcr.io/v2/jlp04/homebrew'
+      - name: Base64-encode GITHUB_TOKEN for HOMEBREW_DOCKER_REGISTRY_TOKEN
+        id: base64-encode
         if: github.event_name == 'pull_request'
+        env:
+          TOKEN: ${{ github.token }}
+        run: |
+          base64_token=$(echo -n "${TOKEN}" | base64 | tr -d "\\n")
+          echo "::add-mask::${base64_token}"
+          echo "token=${base64_token}" >> "${GITHUB_OUTPUT}"
+
+      - run: brew test-bot --only-formulae --root-url='https://ghcr.io/v2/jlp04/homebrew'
+        if: github.event_name == 'pull_request'
+        env:
+          HOMEBREW_DOCKER_REGISTRY_TOKEN: ${{ steps.base64-encode.outputs.token }}
 
       - name: Upload bottles as artifact
         if: always() && github.event_name == 'pull_request'
