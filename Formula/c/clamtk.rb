@@ -8,7 +8,7 @@ class Clamtk < Formula
     "BSD-3-Clause",
     any_of: ["GPL-1.0-or-later", "Artistic-2.0"],
   ]
-  revision 33
+  revision 34
   head "https://gitlab.com/dave_m/clamtk.git", branch: "master"
   livecheck do
     url :stable
@@ -111,8 +111,8 @@ class Clamtk < Formula
     end
 
     resource "IO::Socket::SSL" do
-      url "https://cpan.metacpan.org/authors/id/S/SU/SULLR/IO-Socket-SSL-2.091.tar.gz"
-      sha256 "c5996e7335912a5c99e06bdb47ff39df309a857cbd8fd2627a021cefdb53cf54"
+      url "https://cpan.metacpan.org/authors/id/S/SU/SULLR/IO-Socket-SSL-2.092.tar.gz"
+      sha256 "0f68331ff0b033441bcf00355bca74b2ceb799a45fd1661d47e0c0ab9610e8f4"
     end
 
     resource "Net::SSLeay" do
