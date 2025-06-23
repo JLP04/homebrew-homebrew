@@ -8,7 +8,7 @@ class Clamtk < Formula
     "BSD-3-Clause",
     any_of: ["GPL-1.0-or-later", "Artistic-2.0"],
   ]
-  revision 34
+  revision 35
   head "https://gitlab.com/dave_m/clamtk.git", branch: "master"
   livecheck do
     url :stable
@@ -111,8 +111,8 @@ class Clamtk < Formula
     end
 
     resource "IO::Socket::SSL" do
-      url "https://cpan.metacpan.org/authors/id/S/SU/SULLR/IO-Socket-SSL-2.092.tar.gz"
-      sha256 "0f68331ff0b033441bcf00355bca74b2ceb799a45fd1661d47e0c0ab9610e8f4"
+      url "https://cpan.metacpan.org/authors/id/S/SU/SULLR/IO-Socket-SSL-2.094.tar.gz"
+      sha256 "b2446889cb5e20545d782c4676da1b235673a81c181689aaae2492589d84bf02"
     end
 
     resource "Net::SSLeay" do
@@ -196,16 +196,14 @@ class Clamtk < Formula
   end
 
   def caveats
-    if build.with? "perlbrew"
-      <<~EOS
-        If you want to install ClamTk to a perlbrew perl, run the following (you will need to install cairo, pkgconf, and vtk to build the perl modules):
-        for d in "$PERLBREW_ROOT"/perls/perl-*/lib/site_perl/5.*; do
-          sudo mkdir -p "$d"/ClamTk
-          sudo cp $(brew --prefix)/share/perl5/vendor_perl/ClamTk/*.pm "$d"/ClamTk/
-        done
-        sudo cpan -i ExtUtils::Depends ExtUtils::PkgConfig Glib LWP::UserAgent HTTP::Message Clone URI HTTP::Date Try::Tiny LWP::Protocol::https Net::HTTP IO::Socket::SSL Net::SSLeay Text::CSV JSON Locale::gettext Gtk3 Cairo Cairo::GObject Glib::Object::Introspection
-      EOS
-    end
+    <<~EOS
+      If you want to install ClamTk to a perlbrew perl, run the following (you will need to install cairo, pkgconf, and vtk to build the perl modules):
+      for d in "$PERLBREW_ROOT"/perls/perl-*/lib/site_perl/5.*; do
+        sudo mkdir -p "$d"/ClamTk
+        sudo cp $(brew --prefix)/share/perl5/vendor_perl/ClamTk/*.pm "$d"/ClamTk/
+      done
+      sudo cpan -i ExtUtils::Depends ExtUtils::PkgConfig Glib LWP::UserAgent HTTP::Message Clone URI HTTP::Date Try::Tiny LWP::Protocol::https Net::HTTP IO::Socket::SSL Net::SSLeay Text::CSV JSON Locale::gettext Gtk3 Cairo Cairo::GObject Glib::Object::Introspection
+    EOS
   end
 
   test do
