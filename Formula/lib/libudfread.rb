@@ -10,6 +10,8 @@ class Libudfread < Formula
     url :head
   end
 
+  no_autobump! because: :incompatible_version_format
+
   bottle do
     root_url "https://ghcr.io/v2/jlp04/homebrew"
     sha256 cellar: :any,                 arm64_sequoia: "2503af3f963044f09e4363eedf3604f5553a9347ef2977fc968a2865f6d65995"
