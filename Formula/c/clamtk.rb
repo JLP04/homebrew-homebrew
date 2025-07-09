@@ -19,9 +19,10 @@ class Clamtk < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/jlp04/homebrew"
-    sha256                               arm64_sonoma: "d5d2db2df091c93f426ffd377064ce10433e7215f17a2b5910c9b7f7ad17f26f"
-    sha256                               ventura:      "04aeefa940043a811857870ddb0f28d2145dc1c1dd8e64f990f4f9bca44940c3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "51427586ed74f3a8291bbc212738598f0c5b4b0960f90c3181f4da49de6931ab"
+    rebuild 1
+    sha256                               arm64_sonoma: "7592262a6eff00a2e6769c946473485550db0fff94929c1bb58d1c1ca007aa68"
+    sha256                               ventura:      "6aad3db73beb86e5e78f91796ebd44f25c652ca6130e70ae059dc456d2e11548"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "dd91493f48db9997ffa1ff94b2cd10fbcb4c9e96ca7dfcdc0aa7812693d01be5"
   end
   option "with-perlbrew", "Install using perlbrew's perl"
 
