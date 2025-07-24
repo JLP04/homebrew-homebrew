@@ -21,7 +21,7 @@ jobs:
         id: set-up-homebrew
         uses: Homebrew/actions/setup-homebrew@main
         with:
-          token: ${{ github.token }}
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Cache Homebrew Bundler RubyGems
         id: cache
@@ -41,7 +41,7 @@ jobs:
         id: base64-encode
         if: github.event_name == 'pull_request'
         env:
-          TOKEN: ${{ github.token }}
+          TOKEN: ${{ secrets.GITHUB_TOKEN}}
         run: |
           base64_token=$(echo -n "${TOKEN}" | base64 | tr -d "\\n")
           echo "::add-mask::${base64_token}"
