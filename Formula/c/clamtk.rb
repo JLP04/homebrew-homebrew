@@ -311,8 +311,10 @@ class Clamtk < Formula
       EOS
     end
     inreplace "test", "#!#{HOMEBREW_PREFIX}/opt/perl/bin/perl", "#!/usr/bin/env perl" if build.with? "perlbrew"
-    ENV.prepend_create_path "PERL5LIB", "#{share}/perl5/vendor_perl" if build.without? "perlbrew"
-    ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
+    if build.without? "perlbrew"
+      ENV.prepend_create_path "PERL5LIB", "#{share}/perl5/vendor_perl"
+      ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
+    end
     chmod "+x", "test"
     system "./test"
   end
