@@ -15,11 +15,10 @@ class Libudfread < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/jlp04/homebrew"
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "b6ba6e965fccccb1ce1d9f657c8511c1f0fe9bb8cad338437f161c2cf2b23849"
-    sha256 cellar: :any,                 arm64_sonoma:  "651dae059cda96875db82b1fc7f045a9f81eb562fe299468bc89140734f8e7f8"
-    sha256 cellar: :any,                 ventura:       "79a4f79dc295eea826a3ce3188c811fe6db54dad32f55d9f0698a9c37d12aaf4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7caecc878b5391efec7dbf90c9c64daa9ee5fb9275aa17e6e6460cd3b1175367"
+    sha256 cellar: :any,                 arm64_sequoia: "693b8124dc6aa076c134641f07e0799a4a9c4ce3cdf3d3af3a858b7da4603690"
+    sha256 cellar: :any,                 arm64_sonoma:  "2dcb814ce69beb3b2af5c1243eb2bc8ac43c76c22288735bdcd0459c95cc9910"
+    sha256 cellar: :any,                 ventura:       "ed8282373cb9c02dc02a0c941eeac11005c6d9692775af816b00f1d997a3f3af"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b32dc50777c50abb4b82b33c23d5f2fe832b7790a32f7979af62707952e1bc8d"
   end
 
   depends_on "meson" => :build
