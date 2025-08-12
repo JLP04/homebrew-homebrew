@@ -1,10 +1,11 @@
 class Libudfread < Formula
   desc "Library for reading UDF from raw devices and image files"
   homepage "https://code.videolan.org/videolan/libudfread/"
-  url "https://code.videolan.org/videolan/libudfread/-/archive/a089d1bd4118f5072a1dbb76f459dc41bb106bb5/libudfread-a089d1bd4118f5072a1dbb76f459dc41bb106bb5.tar.gz"
+  url "https://code.videolan.org/videolan/libudfread/-/archive/c3cd5cbb097924557ea4d9da1ff76a74620c51a8/libudfread-c3cd5cbb097924557ea4d9da1ff76a74620c51a8.tar.gz"
   version "1.2.0"
-  sha256 "756b4e7b2f10fce77928c0e2705d0b7d29a204b9fdf3b15673f806c623359413"
+  sha256 "cad9c997dda97a5bc9e0e01a664fd8ac9deb227bca09124f87666ed1e4d4dba6"
   license "LGPL-2.1-only"
+  revision 1
   head "https://code.videolan.org/videolan/libudfread.git", branch: "master"
   livecheck do
     url :head
@@ -21,16 +22,14 @@ class Libudfread < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7caecc878b5391efec7dbf90c9c64daa9ee5fb9275aa17e6e6460cd3b1175367"
   end
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
-  depends_on "libtool" => :build
+  depends_on "meson" => :build
+  depends_on "ninja" => :build
   depends_on "pkgconf" => :test
 
   def install
-    system "autoreconf", "-i", "-f"
-    system "./configure", *std_configure_args, "--disable-silent-rules"
-    system "make"
-    system "make", "install"
+    system "meson", "setup", "build", *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "install", "-C", "build"
   end
 
   test do
