@@ -8,7 +8,7 @@ class Clamtk < Formula
     "BSD-3-Clause",
     any_of: ["GPL-1.0-or-later", "Artistic-2.0"],
   ]
-  revision 37
+  revision 38
   head "https://gitlab.com/dave_m/clamtk.git", branch: "master"
   livecheck do
     url :stable
@@ -109,8 +109,8 @@ class Clamtk < Formula
     end
 
     resource "Net::HTTP" do
-      url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/Net-HTTP-6.23.tar.gz"
-      sha256 "0d65c09dd6c8589b2ae1118174d3c1a61703b6ecfc14a3442a8c74af65e0c94e"
+      url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/Net-HTTP-6.24.tar.gz"
+      sha256 "290ed9a97b05c7935b048e6d2a356035871fca98ad72c01c5961726adf85c83c"
     end
 
     resource "IO::Socket::SSL" do
