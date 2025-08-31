@@ -45,8 +45,8 @@ class Libtifiles < Formula
 
   test do
     resource("testfile") do
-      url "https://education.ti.com/download/en/ed-tech/55EDE969CFD2484487B4556641BDDC4E/B38964FB6AF244DFA4674BA19128646C/CabriJr_CE.8ek"
-      sha256 "6e28f09a50293a14c49ce438d2fa336392c538d44c4b5ef18964e239825d1303"
+      url "https://education.ti.com/download/en/ed-tech/55EDE969CFD2484487B4556641BDDC4E/99F094C3FF7140A998994A8BE767A2E0/CabriJr_CE_5.8.3.0048.8ek"
+      sha256 "845594b672bd20f0903caa6ea93295601e802a901be3f2efdc480a3607d0eba8"
     end
 
     (testpath/"test.c").write <<~EOS
@@ -60,7 +60,7 @@ class Libtifiles < Formula
         tifiles_library_init();
         tifiles_version_get();
 
-        tifiles_file_read_flash("CabriJr_CE.8ek", content);
+        tifiles_file_read_flash("CabriJr_CE_5.8.3.0048.8ek", content);
         tifiles_file_display_flash(content);
 
         return 0;
