@@ -93,13 +93,13 @@ class Tilp < Formula
 
   test do
     resource("testfile1") do
-      url "https://education.ti.com/download/en/ed-tech/55EDE969CFD2484487B4556641BDDC4E/B38964FB6AF244DFA4674BA19128646C/CabriJr_CE.8ek"
-      sha256 "6e28f09a50293a14c49ce438d2fa336392c538d44c4b5ef18964e239825d1303"
+      url "https://education.ti.com/download/en/ed-tech/55EDE969CFD2484487B4556641BDDC4E/99F094C3FF7140A998994A8BE767A2E0/CabriJr_CE_5.8.3.0048.8ek"
+      sha256 "845594b672bd20f0903caa6ea93295601e802a901be3f2efdc480a3607d0eba8"
     end
 
     resource("testfile2") do
-      url "https://education.ti.com/download/en/ed-tech/BCBFECEC5F4242B28E9AE89DA7C4BA59/030A23A7ECE14DB6A70DF859F83979C7/TI84CEBundle-5.8.2.29.b84"
-      sha256 "d13f804bbd7f27e07f98b319ea82c9bf24b32fe02e6fe2025789a7e7bf199a6c"
+      url "https://education.ti.com/download/en/ed-tech/BCBFECEC5F4242B28E9AE89DA7C4BA59/98A175EF6FDF4073B5675B6DF20CE705/TI84CEBundle-5.8.3.48.b84"
+      sha256 "73b65c3b71d64af731c3e63d2e8df9b3019cdbe9ef6d12795382051c112c8293"
     end
 
     resource("testfile1").stage testpath
@@ -107,6 +107,7 @@ class Tilp < Formula
     shell_output("#{bin}/tilp --help")
     shell_output("#{bin}/tilp --version")
     system bin/"tilp", "-n"
-    system bin/"tilp", "-n", "--cable", "Null", "--calc", "None", "CabriJr_CE.8ek", "TI84CEBundle-5.8.2.29.b84"
+    filenames = "CabriJr_CE_5.8.3.0048.8ek TI84CEBundle-5.8.3.48.b84".chomp.split
+    system bin/"tilp", "-n", "--cable", "Null", "--calc", "None", *filenames
   end
 end
