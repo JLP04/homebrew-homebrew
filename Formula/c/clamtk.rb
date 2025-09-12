@@ -8,7 +8,7 @@ class Clamtk < Formula
     "BSD-3-Clause",
     any_of: ["GPL-1.0-or-later", "Artistic-2.0"],
   ]
-  revision 39
+  revision 40
   head "https://gitlab.com/dave_m/clamtk.git", branch: "master"
   livecheck do
     url :stable
@@ -73,8 +73,8 @@ class Clamtk < Formula
     end
 
     resource "LWP::UserAgent" do
-      url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/libwww-perl-6.79.tar.gz"
-      sha256 "f2526e9a33ac96715cc47fbf5b4bec1a8c51720330b24e3974c2c5ae07a9c5e7"
+      url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/libwww-perl-6.80.tar.gz"
+      sha256 "5ba3fc5a00836e61cb428bcd91bf69d8d74eaee6d78e44c3a414f78076af0a98"
     end
 
     resource "HTTP::Message" do
