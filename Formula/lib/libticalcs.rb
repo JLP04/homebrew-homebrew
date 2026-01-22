@@ -1,11 +1,11 @@
 class Libticalcs < Formula
   desc "TiCalcs library is a part of the TiLP project"
   homepage "http://lpg.ticalc.org/prj_tilp"
-  url "https://github.com/debrouxl/tilibs/archive/136042d7d38c8e7f7801b5fbf23c24cac711b238.tar.gz"
+  url "https://github.com/debrouxl/tilibs/archive/791d2535813fa7ffef8f9feadf110998d4ae57fb.tar.gz"
   version "1.1.10"
-  sha256 "5828160f6247738aa1e1e567fe7f1cc7e2553ddef5574eafcf63d6adbf0231f3"
+  sha256 "a603e9b7424369bcffb64fd4ad6cb8ab4e187280738fc89fde2f2ca2dd46eb44"
   license "GPL-2.0-or-later"
-  revision 10
+  revision 11
   head "https://github.com/debrouxl/tilibs.git", branch: "master"
   livecheck do
     skip "Based on git commits, version number doesn't change"
