@@ -47,7 +47,7 @@ class Tfdocgen < Formula
     shell_output("#{bin}/tfdocgen --version")
     shell_output("#{bin}/tfdocgen --help")
     resource("testdocs").stage testpath/"libs"
-    Dir.chdir("#{testpath}/libs/libticables/trunk")
+    Dir.chdir(testpath/"libs/libticables/trunk")
     system bin/"tfdocgen", "./"
     assert_path_exists testpath/"libs/libticables/trunk/docs/html/api.html"
   end
