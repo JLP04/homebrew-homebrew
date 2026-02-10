@@ -65,7 +65,7 @@ class Tilp < Formula
   on_linux do
     depends_on "perl" => :build
     depends_on "expat"
-    depends_on "zlib"
+    depends_on "zlib-ng-compat"
 
     resource "XML::Parser" do
       url "https://cpan.metacpan.org/authors/id/T/TO/TODDR/XML-Parser-2.47.tar.gz"
