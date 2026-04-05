@@ -5,7 +5,7 @@ class Tilp < Formula
   version "1.19"
   sha256 "33347790504b25a5b33bdf64f950ff86584e7668644a5f275441348e06b763c3"
   license "GPL-2.0-or-later"
-  revision 6
+  revision 7
   compatibility_version 1
   head "https://github.com/debrouxl/tilp_and_gfm.git", branch: "master"
   livecheck do
@@ -70,8 +70,8 @@ class Tilp < Formula
     depends_on "zlib-ng-compat"
 
     resource "XML::Parser" do
-      url "https://cpan.metacpan.org/authors/id/T/TO/TODDR/XML-Parser-2.47.tar.gz"
-      sha256 "ad4aae643ec784f489b956abe952432871a622d4e2b5c619e8855accbfc4d1d8"
+      url "https://cpan.metacpan.org/authors/id/T/TO/TODDR/XML-Parser-2.56.tar.gz"
+      sha256 "a78bfcd3834fde7411acee2f5fcd74deeecfbaa8cee86f16c33c42dde2fd8fff"
     end
   end
 
