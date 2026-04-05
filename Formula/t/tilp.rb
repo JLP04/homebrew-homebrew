@@ -68,22 +68,9 @@ class Tilp < Formula
     depends_on "perl" => :build
     depends_on "expat"
     depends_on "zlib-ng-compat"
-
-    resource "XML::Parser" do
-      url "https://cpan.metacpan.org/authors/id/T/TO/TODDR/XML-Parser-2.56.tar.gz"
-      sha256 "a78bfcd3834fde7411acee2f5fcd74deeecfbaa8cee86f16c33c42dde2fd8fff"
-    end
   end
 
   def install
-    if OS.linux?
-      ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
-      resource("XML::Parser").stage do
-        system "perl", "Makefile.PL", "INSTALL_BASE=#{libexec}"
-        system "make", "PERL5LIB=#{ENV["PERL5LIB"]}"
-        system "make", "install"
-      end
-    end
     Dir.chdir("tilp/trunk")
     system "autoreconf", "-i", "-f"
     system "./configure", *std_configure_args, "--disable-silent-rules"
