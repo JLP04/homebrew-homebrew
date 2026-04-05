@@ -6,6 +6,7 @@ class Libticalcs < Formula
   sha256 "a603e9b7424369bcffb64fd4ad6cb8ab4e187280738fc89fde2f2ca2dd46eb44"
   license "GPL-2.0-or-later"
   revision 11
+  compatibility_version 1
   head "https://github.com/debrouxl/tilibs.git", branch: "master"
   livecheck do
     skip "Based on git commits, version number doesn't change"
