@@ -6,6 +6,7 @@ class Tilp < Formula
   sha256 "33347790504b25a5b33bdf64f950ff86584e7668644a5f275441348e06b763c3"
   license "GPL-2.0-or-later"
   revision 6
+  compatibility_version 1
   head "https://github.com/debrouxl/tilp_and_gfm.git", branch: "master"
   livecheck do
     skip "Based on git commits, version number doesn't change"
