@@ -6,6 +6,7 @@ class Libtifiles < Formula
   sha256 "28c60bb9fd1942a02d3d275ddd885ae9c2e68236b3557116677e9cae979c6a36"
   license "GPL-2.0-or-later"
   revision 1
+  compatibility_version 1
   head "https://github.com/debrouxl/tilibs.git", branch: "master"
   livecheck do
     skip "Based on git commits, version number doesn't change"
