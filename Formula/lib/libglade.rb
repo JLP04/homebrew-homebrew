@@ -4,6 +4,7 @@ class Libglade < Formula
   url "https://download.gnome.org/sources/libglade/2.6/libglade-2.6.4.tar.gz"
   sha256 "c41d189b68457976069073e48d6c14c183075d8b1d8077cb6dfb8b7c5097add3"
   license "GPL-2.0-only"
+  compatibility_version 1
 
   bottle do
     root_url "https://ghcr.io/v2/jlp04/homebrew"
