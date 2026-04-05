@@ -5,6 +5,7 @@ class Tfdocgen < Formula
   version "1.00"
   sha256 "f760bf06c5b450508b6b3ff785cf58d4bdfbbf9d32f92cc152bb3998deb747f1"
   license "GPL-2.0-or-later"
+  compatibility_version 1
   head "https://github.com/debrouxl/tfdocgen.git", branch: "master"
   livecheck do
     skip "Based on git commits, version number doesn't change"
