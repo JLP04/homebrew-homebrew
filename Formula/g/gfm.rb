@@ -6,6 +6,7 @@ class Gfm < Formula
   sha256 "fd638afc5eb7104be54d465137c22fafb024cef465837691fe66234d0d429513"
   license "GPL-2.0-or-later"
   revision 2
+  compatibility_version 1
   head "https://github.com/debrouxl/tilp_and_gfm.git", branch: "master"
   livecheck do
     skip "Based on git commits, version number doesn't change"
