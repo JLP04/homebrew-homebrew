@@ -14,10 +14,11 @@ class Tilp < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/jlp04/homebrew"
-    rebuild 2
-    sha256 arm64_tahoe:   "d710856249e2dda7a56d1ecfef3917b9355b143d38379ed2b2719e3312e6cb32"
-    sha256 arm64_sequoia: "74f027b239ccf8ffc043a31005a0d575cb617bc57782cdce70d438c5cafbae92"
-    sha256 arm64_sonoma:  "9cecffd6e0cf6f8a4f2e39154f58fc4e6bdf7a4d93cbacb7bbc6ae95c4d9dad4"
+    sha256 arm64_tahoe:   "06ae17873986c43aae7fde2022cac8ecac4b6bd40450e36ef4340634dbc96f68"
+    sha256 arm64_sequoia: "6c9d0267b8236ecebc4a2f58a039ffd3cbed8d1335e82caeef2efee086d6ba21"
+    sha256 arm64_sonoma:  "1122a36c6756b9d6d279b40634ea6428489a506251827d3f8ad277c184e576ea"
+    sha256 arm64_linux:   "e731052b5659dd572d4c50a7661666be9d1d8dc4c922764be8b7f5191f3f0b27"
+    sha256 x86_64_linux:  "4b0c1062cc915b3e30256d4d18e223c16d61442388877a7bac317c93e87c208a"
   end
 
   depends_on "autoconf" => :build
