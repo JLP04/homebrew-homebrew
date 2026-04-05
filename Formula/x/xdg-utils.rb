@@ -4,6 +4,7 @@ class XdgUtils < Formula
   url "https://gitlab.freedesktop.org/xdg/xdg-utils/-/archive/v1.2.1/xdg-utils-v1.2.1.tar.gz"
   sha256 "f6b648c064464c2636884c05746e80428110a576f8daacf46ef2e554dcfdae75"
   license "MIT"
+  compatibility_version 1
   head "https://gitlab.freedesktop.org/xdg/xdg-utils.git", branch: "master"
   livecheck do
     url :stable
