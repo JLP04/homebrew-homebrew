@@ -6,6 +6,7 @@ class Libticables < Formula
   sha256 "86dd7c916ed9326b9700d5090d01b65063a59ec3e1b08dedaf0b51cb037e47c3"
   license "GPL-2.0-or-later"
   revision 7
+  compatibility_version 1
   head "https://github.com/debrouxl/tilibs.git", branch: "master"
   livecheck do
     skip "Based on git commits, version number doesn't change"
