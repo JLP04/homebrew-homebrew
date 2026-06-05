@@ -16,8 +16,6 @@ class Clamtk < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-  no_autobump! because: :incompatible_version_format
-
   bottle do
     root_url "https://ghcr.io/v2/jlp04/homebrew"
     sha256 cellar: :any,                 arm64_tahoe:   "695f1e54e38034a0d01ba48d021763367cb93f11f2cd14bb716454b4dbc3ead5"
