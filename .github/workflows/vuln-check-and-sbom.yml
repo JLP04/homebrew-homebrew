@@ -1,0 +1,67 @@
+name: Vulnerabillity Check and SBOM Submission
+
+on:
+    push:
+        branches:
+            - main
+        paths:
+            - "Formula/**/*.rb"
+    schedule:
+        - cron: '10 14 * * 4'
+
+jobs:
+    vulns_and_sbom:
+        runs-on: ubuntu-latest
+        permissions:
+            contents: write
+            security-events: write
+        steps:
+            - name: Set up Homebrew
+              id: set-up-homebrew
+              uses: Homebrew/actions/setup-homebrew@main
+
+            - name: Install brew-vulns
+              run: brew install homebrew/brew-vulns/brew-vulns
+
+            - name: Detect formulae names
+              id: formulae
+              run: |
+                cd "$(brew --repository "${GITHUB_REPOSITORY}")"
+                names=$(find Formula -name *.rb) \
+                  | xargs -r -n1 basename \
+                  | sed 's/\.rb$//' \
+                  | tr '\n' ' ')
+                  echo "names={$names}" >> "${GITHUB_OUTPUT}"
+
+            - name: Check vulnerabilities
+              id: scan
+              env:
+                FORMULAE: ${{ steps.formulae.outputs.names }}
+              run: |
+                brew vulns ${FORMULAE} --sarif > vulns.sarif || [ $? -eq 1 ]
+                if [ -s vulns.sarif ]; then
+                  echo "sarif=true" >> "${GITHUB_OUTPUT}"
+                fi
+            
+            - name: Upload SARIF
+              if: steps.scan.outputs.sarif == 'true'
+              uses: github/codeql-action/upload-sarif@v3
+              with:
+                sarif_file: vulns.sarif
+                category: brew-vulns
+
+            - name: Generate SBOM
+              id: sbom
+              env:
+                FORMULAE: ${{ steps.formulae.outputs.names }}
+              run: |
+                brew vulns ${FORMULAE} --cyclonedx > sbom.cdx.json || [ ?$ -eq 1 ]
+                if [ -s sbom.cdx.json ]; then
+                  echo "sbom=true" >> "${GITHUB_OUTPUT}"
+                fi
+
+            - name: Submit to dependency graph
+              if: steps.sbom.outputs.sbom == 'true'
+              uses: evryfs/sbom-dependency-submission-action@v0.0.14
+              with:
+                sbom-files: sbom.cdx.json
