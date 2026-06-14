@@ -38,7 +38,7 @@ jobs:
               env:
                 FORMULAE: ${{ steps.formulae.outputs.names }}
               run: |
-                brew vulns "${FORMULAE}" --sarif > vulns.sarif || [ $? -eq 1 ]
+                brew vulns "${FORMULAE}" --sarif > vulns.sarif || [ $? -eq $(1) ]
                 if [ -s vulns.sarif ]; then
                   echo "sarif=true" >> "${GITHUB_OUTPUT}"
                 fi
@@ -55,7 +55,7 @@ jobs:
               env:
                 FORMULAE: ${{ steps.formulae.outputs.names }}
               run: |
-                brew vulns "${FORMULAE}" --cyclonedx > sbom.cdx.json || [ ?$ -eq 1 ]
+                brew vulns "${FORMULAE}" --cyclonedx > sbom.cdx.json || [ ?$ -eq $(1) ]
                 if [ -s sbom.cdx.json ]; then
                   echo "sbom=true" >> "${GITHUB_OUTPUT}"
                 fi
