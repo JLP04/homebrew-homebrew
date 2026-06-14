@@ -31,7 +31,7 @@ jobs:
                   | xargs -r -n1 basename \
                   | sed 's/\.rb$//' \
                   | tr '\n' ' ')
-                echo "names={$names}" >> "${GITHUB_OUTPUT}"
+                echo "names=${names}" >> "${GITHUB_OUTPUT}"
 
             - name: Check vulnerabilities
               id: scan
