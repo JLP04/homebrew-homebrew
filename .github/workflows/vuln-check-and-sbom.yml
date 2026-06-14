@@ -27,7 +27,7 @@ jobs:
               id: formulae
               run: |
                 cd "$(brew --repository "${GITHUB_REPOSITORY}")"
-                names=$(find Formula -name *.rb) \
+                names=$(find Formula -name *.rb \
                   | xargs -r -n1 basename \
                   | sed 's/\.rb$//' \
                   | tr '\n' ' ')
