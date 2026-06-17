@@ -29,7 +29,8 @@ jobs:
                 names=$(git diff --name-only --diff-filter=AM "${BASE_SHA}" -- Formula/ \
                   | xargs -r -n1 basename \
                   | sed 's/\.rb$//' \
-                  | tr '\n' ' ')
+                  | tr '\n' ' ' \
+                  | xargs)
                 echo "names=${names}" >> "${GITHUB_OUTPUT}"
 
             - name: Check vulnerabilities
