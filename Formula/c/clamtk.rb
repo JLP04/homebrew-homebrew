@@ -18,11 +18,11 @@ class Clamtk < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/jlp04/homebrew"
-    sha256 cellar: :any, arm64_tahoe:   "272ade756583f9d03f09e78639ce393658b127c89e0a4bec0a56efda9c9e004a"
-    sha256 cellar: :any, arm64_sequoia: "af539e21f5b279134a959fb381fccc08d6879fe91520b777900f69aec1159959"
-    sha256 cellar: :any, arm64_sonoma:  "be92c16649ef0957243a8d4e1901b1f497ccf626f2f3ce40f0567a1b971a60e4"
-    sha256 cellar: :any, arm64_linux:   "0adc4237e5751579ff9d6183bc62ae88bb17b475e665be1eb925152c5598ffb7"
-    sha256 cellar: :any, x86_64_linux:  "454391d02bbac027bdd8275e5b08934c0e1fddf26060315d01b3a22a9b690d60"
+    sha256 cellar: :any, arm64_tahoe:   "671164726c1864751442c36f5db0f781754d6f7d3c64aead89e90792d434f824"
+    sha256 cellar: :any, arm64_sequoia: "1564bfbacbc8c4472601e8a88598538a8c2714c36507ffa3fefe493adfa901f0"
+    sha256 cellar: :any, arm64_sonoma:  "4db35e46ca613489bfa99a324718d3ebf73d7cb718cf800f4f1268d68893f62f"
+    sha256 cellar: :any, arm64_linux:   "b04359f705161a94cc40266a1230ca1ff6f8949ca333c260cc4e610850e91d0d"
+    sha256 cellar: :any, x86_64_linux:  "3beda5c2e926cd095cc15cc5db336f9352526adc0bbe590584b9816424dea796"
   end
   option "with-perlbrew", "Install using perlbrew's perl"
 
