@@ -67,23 +67,23 @@ class Libglade < Formula
       -I#{gdk_pixbuf.opt_include}/gdk-pixbuf-2.0
       -I#{gettext.opt_include}
       -I#{glib.opt_include}/glib-2.0
-      -I#{glib.opt_lib}/glib-2.0/include
+      -I#{formula_opt_lib("glib")}/glib-2.0/include
       -I#{gtkx.opt_include}/gtk-2.0
-      -I#{gtkx.opt_lib}/gtk-2.0/include
+      -I#{formula_opt_lib("gtk+")}/gtk-2.0/include
       -I#{harfbuzz.opt_include}/harfbuzz
       -I#{include}/libglade-2.0
       -I#{libpng.opt_include}/libpng16
       -I#{pango.opt_include}/pango-1.0
       -I#{pixman.opt_include}/pixman-1
       -D_REENTRANT
-      -L#{atk.opt_lib}
-      -L#{cairo.opt_lib}
-      -L#{gdk_pixbuf.opt_lib}
-      -L#{gettext.opt_lib}
-      -L#{glib.opt_lib}
-      -L#{gtkx.opt_lib}
+      -L#{formula_opt_lib("at-spi2-core")}
+      -L#{formula_opt_lib("cairo")}
+      -L#{formula_opt_lib("gdk-pixbuf")}
+      -L#{formula_opt_lib("gettext")}
+      -L#{formula_opt_lib("glib")}
+      -L#{formula_opt_lib("gtk+")}
       -L#{lib}
-      -L#{pango.opt_lib}
+      -L#{formula_opt_lib("pango")}
       -latk-1.0
       -lcairo
       -lgdk_pixbuf-2.0
