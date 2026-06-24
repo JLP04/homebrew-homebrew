@@ -8,11 +8,11 @@ class Libglade < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/jlp04/homebrew"
-    rebuild 4
-    sha256 arm64_tahoe:   "7dca5fcf9ac376235bc2b55d9cb83a9b81c5acfe3c75fdea6f7a9df2988dffde"
-    sha256 arm64_sequoia: "ae4499c7e40ed0c52ef4341b2eb40314bda28f7fe0e3e804e85031e33d4c60bc"
-    sha256 arm64_sonoma:  "00f677f51252959334e110d0e9321d46bf95314851694a17b38fe6c0d0c8cc6e"
-    sha256 x86_64_linux:  "19b47520088c534b1f167c4f170407e803fb87043503787014a94c36a05582bb"
+    rebuild 5
+    sha256 arm64_tahoe:   "06c324ff0440850d590343110ed4c073c03c9531c2c4e34a1c426c2fd66eea62"
+    sha256 arm64_sequoia: "9af50e2d59c6e6c64756c1059a8bbf7992b416aa131c13b7d2fb346f548b3618"
+    sha256 arm64_sonoma:  "aeec40ce2bf8ed3a9b5f19e1b5655ea8b2bf37ee3ff79120a802a726cca0afc1"
+    sha256 x86_64_linux:  "9eb1f9ff278013b099c5e09dc2bccc8bae03eb60a6b623e888976f7fb967732c"
   end
 
   depends_on "pkgconf" => :build
