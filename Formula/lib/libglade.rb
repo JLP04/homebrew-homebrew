@@ -30,8 +30,32 @@ class Libglade < Formula
     depends_on "harfbuzz"
   end
 
+  resource "config.guess" do
+    url "https://git.savannah.gnu.org/cgit/config.git/plain/config.guess"
+    version "2026-05-17"
+    sha256 "ac18bbd7dc3769e1646af49ebba331a391829f4a73579b735dc8d439bd1c7f07"
+    livecheck do
+      url "https://git.savannah.gnu.org/cgit/config.git/plain/config.guess"
+      regex(/timestamp='(.*)'/)
+      strategy :page_match
+    end
+  end
+
+  resource "config.sub" do
+    url "https://git.savannah.gnu.org/cgit/config.git/plain/config.sub"
+    version "2026-05-17"
+    sha256 "f9a31e9a3f5b7cbeb8d8c3f2015895a51e7222130114c9c363fcbccd78e4bf6b"
+    livecheck do
+      url "https://git.savannah.gnu.org/cgit/config.git/plain/config.sub"
+      regex(/timestamp='(.*)'/)
+      strategy :page_match
+    end
+  end
+
   def install
     ENV.append "LDFLAGS", "-lgmodule-2.0"
+    resource("config.guess").stage buildpath
+    resource("config.sub").stage buildpath
     system "./configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}"
     system "make", "install"
