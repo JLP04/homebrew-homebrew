@@ -106,7 +106,7 @@ class Libticalcs < Formula
         return 0;
       }
     EOS
-    ENV["PKG_CONFIG_PATH"] = "#{HOMEBREW_PREFIX}/opt/libarchive/lib/pkgconfig"
+    ENV["PKG_CONFIG_PATH"] = "#{formula_opt_lib("libarchive")}/pkgconfig"
     flags = shell_output("pkg-config --cflags --libs ticalcs2").chomp.split
     flags_cables = shell_output("pkg-config --cflags --libs ticables2").chomp.split
     system ENV.cc, "-Os", "-g", "-Wall", "-W", "test.c", *flags, *flags_cables, "-o", "test"
