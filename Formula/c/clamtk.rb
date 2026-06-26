@@ -8,7 +8,7 @@ class Clamtk < Formula
     "BSD-3-Clause",
     any_of: ["GPL-1.0-or-later", "Artistic-2.0"],
   ]
-  revision 50
+  revision 51
   compatibility_version 1
   head "https://gitlab.com/dave_m/clamtk.git", branch: "master"
   livecheck do
@@ -95,8 +95,8 @@ class Clamtk < Formula
     end
 
     resource "HTTP::Date" do
-      url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/HTTP-Date-6.06.tar.gz"
-      sha256 "7b685191c6acc3e773d1fc02c95ee1f9fae94f77783175f5e78c181cc92d2b52"
+      url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/HTTP-Date-6.07.tar.gz"
+      sha256 "278c875a1abae8b3afaf7961c8dfe8ea21b37e04ce8fe3c387e7eb999c1d2128"
     end
 
     resource "Try::Tiny" do
@@ -115,8 +115,8 @@ class Clamtk < Formula
     end
 
     resource "IO::Socket::SSL" do
-      url "https://cpan.metacpan.org/authors/id/S/SU/SULLR/IO-Socket-SSL-2.098.tar.gz"
-      sha256 "b38473be20256b1a06447dd6769ad162bfad6a258234ed2c7e2e1819c16c4df7"
+      url "https://cpan.metacpan.org/authors/id/S/SU/SULLR/IO-Socket-SSL-2.099.tar.gz"
+      sha256 "a0be800ff4852b1567ee5500e772417ad7a360abff80c01b5b875c15d44be832"
     end
 
     resource "Net::SSLeay" do
