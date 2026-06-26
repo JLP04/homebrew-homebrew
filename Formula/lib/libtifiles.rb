@@ -69,7 +69,7 @@ class Libtifiles < Formula
       }
     EOS
     resource("testfile").stage testpath
-    ENV["PKG_CONFIG_PATH"] = "#{HOMEBREW_PREFIX}/opt/libarchive/lib/pkgconfig"
+    ENV["PKG_CONFIG_PATH"] = "#{formula_opt_lib("libarchive")}/pkgconfig"
     flags = shell_output("pkg-config --cflags --libs tifiles2").chomp.split
     system ENV.cc, "-Os", "-g", "-Wall", "-W", "test.c", *flags, "-o", "test"
     system "./test"
