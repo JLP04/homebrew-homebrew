@@ -176,7 +176,7 @@ class Clamtk < Formula
       s.gsub! "/usr/share/pixmaps", HOMEBREW_PREFIX/"share/pixmaps"
       s.gsub! "/.local/share/Trash", "/.Trash" if OS.mac?
       s.gsub! "/usr/local", HOMEBREW_PREFIX
-      s.gsub! "/etc", HOMEBREW_PREFIX/"etc/clamav"
+      s.gsub! "/etc", etc/"clamav"
     end
     bin.install "clamtk" if build.with? "perlbrew"
     if build.without? "perlbrew"
@@ -195,7 +195,7 @@ class Clamtk < Formula
   end
 
   def post_install
-    inreplace bin/"clamtk", "#!#{HOMEBREW_PREFIX}/opt/perl/bin/perl", "#!/usr/bin/env perl" if build.with? "perlbrew"
+    inreplace bin/"clamtk", "#!#{formula_opt_bin("perl")}/perl", "#!/usr/bin/env perl" if build.with? "perlbrew"
   end
 
   def caveats
@@ -212,7 +212,7 @@ class Clamtk < Formula
   test do
     if OS.mac?
       (testpath/"test").write <<~EOS
-        #!#{HOMEBREW_PREFIX}/opt/perl/bin/perl
+        #!#{formula_opt_bin("perl")}/perl
         use utf8;
         $| = 1;
 
@@ -263,7 +263,7 @@ class Clamtk < Formula
     end
     if OS.linux?
       (testpath/"test").write <<~EOS
-        #!#{HOMEBREW_PREFIX}/opt/perl/bin/perl
+        #!#{formula_opt_bin("perl")}/perl
         use utf8;
         $| = 1;
 
@@ -311,7 +311,7 @@ class Clamtk < Formula
         ClamTk::Prefs->custom_prefs;
       EOS
     end
-    inreplace "test", "#!#{HOMEBREW_PREFIX}/opt/perl/bin/perl", "#!/usr/bin/env perl" if build.with? "perlbrew"
+    inreplace "test", "#!#{formula_opt_bin("perl")}/perl", "#!/usr/bin/env perl" if build.with? "perlbrew"
     if build.without? "perlbrew"
       ENV.prepend_create_path "PERL5LIB", "#{share}/perl5/vendor_perl"
       ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
