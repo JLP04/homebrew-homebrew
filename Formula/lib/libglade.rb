@@ -72,34 +72,22 @@ class Libglade < Formula
       }
     EOS
     ENV.libxml2
-    atk = Formula["at-spi2-core"]
-    cairo = Formula["cairo"]
-    fontconfig = Formula["fontconfig"]
-    freetype = Formula["freetype"]
-    gdk_pixbuf = Formula["gdk-pixbuf"]
-    gettext = Formula["gettext"]
-    glib = Formula["glib"]
-    gtkx = Formula["gtk+"]
-    harfbuzz = Formula["harfbuzz"]
-    libpng = Formula["libpng"]
-    pango = Formula["pango"]
-    pixman = Formula["pixman"]
     flags = %W[
-      -I#{atk.opt_include}/atk-1.0
-      -I#{cairo.opt_include}/cairo
-      -I#{fontconfig.opt_include}
-      -I#{freetype.opt_include}/freetype2
-      -I#{gdk_pixbuf.opt_include}/gdk-pixbuf-2.0
-      -I#{gettext.opt_include}
-      -I#{glib.opt_include}/glib-2.0
+      -I#{formula_opt_include("at-spi2-core")}/atk-1.0
+      -I#{formula_opt_include("cairo")}/cairo
+      -I#{formula_opt_include("fontconfig")}
+      -I#{formula_opt_include("freetype")}/freetype2
+      -I#{formula_opt_include("gdk-pixbuf")}/gdk-pixbuf-2.0
+      -I#{formula_opt_include("gettext")}
+      -I#{formula_opt_include("glib")}/glib-2.0
       -I#{formula_opt_lib("glib")}/glib-2.0/include
-      -I#{gtkx.opt_include}/gtk-2.0
+      -I#{formula_opt_include("gtk+")}/gtk-2.0
       -I#{formula_opt_lib("gtk+")}/gtk-2.0/include
-      -I#{harfbuzz.opt_include}/harfbuzz
+      -I#{formula_opt_include("harfbuzz")}/harfbuzz
       -I#{include}/libglade-2.0
-      -I#{libpng.opt_include}/libpng16
-      -I#{pango.opt_include}/pango-1.0
-      -I#{pixman.opt_include}/pixman-1
+      -I#{formula_opt_include("libpng")}/libpng16
+      -I#{formula_opt_include("pango")}/pango-1.0
+      -I#{formula_opt_include("pixman")}/pixman-1
       -D_REENTRANT
       -L#{formula_opt_lib("at-spi2-core")}
       -L#{formula_opt_lib("cairo")}
