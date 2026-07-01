@@ -30,8 +30,7 @@ jobs:
                 names=$(find Formula -name '*.rb' -print0 \
                   | xargs -0 -r -n1 basename \
                   | sed 's/\.rb$//' \
-                  | tr '\n' ' ' \
-                  | xargs)
+                  | tr '\n' ' ')
                 echo "names=${names}" >> "${GITHUB_OUTPUT}"
 
             - name: Check vulnerabilities
