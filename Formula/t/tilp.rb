@@ -81,8 +81,8 @@ class Tilp < Formula
     system "make", "install"
   end
 
-  post_install_steps do
-    update_mime_database
+  def post_install
+    update_mime_database if formula_any_version_installed?("shared-mime-info")
   end
 
   test do
