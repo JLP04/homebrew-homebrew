@@ -81,6 +81,10 @@ class Tilp < Formula
     system "make", "install"
   end
 
+  post_install_steps do
+    update_mime_database
+  end
+
   test do
     resource("testfile1") do
       url "https://education.ti.com/download/en/ed-tech/55EDE969CFD2484487B4556641BDDC4E/99F094C3FF7140A998994A8BE767A2E0/CabriJr_CE_5.8.3.0048.8ek"
