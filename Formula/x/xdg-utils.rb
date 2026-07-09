@@ -66,3 +66,4 @@ class XdgUtils < Formula
     system "#{bin}/xdg-settings", "get", "default-web-browser" if OS.linux?
   end
 end
+ 
