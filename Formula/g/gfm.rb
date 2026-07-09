@@ -80,3 +80,4 @@ class Gfm < Formula
     shell_output("#{bin}/gfm --version")
   end
 end
+ 
