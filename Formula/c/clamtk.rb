@@ -8,7 +8,7 @@ class Clamtk < Formula
     "BSD-3-Clause",
     any_of: ["GPL-1.0-or-later", "Artistic-2.0"],
   ]
-  revision 51
+  revision 52
   compatibility_version 1
   head "https://gitlab.com/dave_m/clamtk.git", branch: "master"
   livecheck do
@@ -94,8 +94,8 @@ class Clamtk < Formula
     end
 
     resource "HTTP::Date" do
-      url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/HTTP-Date-6.07.tar.gz"
-      sha256 "278c875a1abae8b3afaf7961c8dfe8ea21b37e04ce8fe3c387e7eb999c1d2128"
+      url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/HTTP-Date-6.08.tar.gz"
+      sha256 "b57d80ca6d821c6949ca48b27467d45aba7a9c77346562306facca781a003e44"
     end
 
     resource "Try::Tiny" do
