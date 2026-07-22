@@ -46,7 +46,7 @@ jobs:
 
             - name: Upload SARIF
               if: steps.scan.outputs.sarif == 'true'
-              uses: github/codeql-action/upload-sarif@v4
+              uses: github/codeql-action/upload-sarif@e0647621c2984b5ed2f768cb892365bf2a616ad1 # v4.37.2
               with:
                 sarif_file: vulns.sarif
                 category: brew-vulns

@@ -46,7 +46,7 @@ jobs:
             
             - name: Upload SARIF
               if: steps.scan.outputs.sarif == 'true'
-              uses: github/codeql-action/upload-sarif@v4
+              uses: github/codeql-action/upload-sarif@e0647621c2984b5ed2f768cb892365bf2a616ad1 # v4.37.2
               with:
                 sarif_file: vulns.sarif
                 category: brew-vulns
@@ -64,6 +64,6 @@ jobs:
 
             - name: Submit to dependency graph
               if: steps.sbom.outputs.sbom == 'true'
-              uses: evryfs/sbom-dependency-submission-action@v0.0.14
+              uses: evryfs/sbom-dependency-submission-action@4466eb923772acc3bd54081f8e2a0ef601d2f28a # v0.0.14
               with:
                 sbom-files: sbom.cdx.json
