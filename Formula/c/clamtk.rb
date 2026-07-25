@@ -98,6 +98,11 @@ class Clamtk < Formula
       sha256 "b57d80ca6d821c6949ca48b27467d45aba7a9c77346562306facca781a003e44"
     end
 
+    resource "Try::Tiny" do
+      url "https://cpan.metacpan.org/authors/id/E/ET/ETHER/Try-Tiny-0.32.tar.gz"
+      sha256 "ef2d6cab0bad18e3ab1c4e6125cc5f695c7e459899f512451c8fa3ef83fa7fc0"
+    end
+
     resource "LWP::Protocol::https" do
       url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/LWP-Protocol-https-6.17.tar.gz"
       sha256 "361c7c1eee8cf66812958f975f26ef2e2272a0c6221d2043477cb9c22b8d1c23"
@@ -200,7 +205,7 @@ class Clamtk < Formula
         sudo mkdir -p "$d"/ClamTk
         sudo cp $(brew --prefix)/share/perl5/vendor_perl/ClamTk/*.pm "$d"/ClamTk/
       done
-      sudo cpan -i ExtUtils::Depends ExtUtils::PkgConfig Glib LWP::UserAgent HTTP::Message Clone URI HTTP::Date LWP::Protocol::https Net::HTTP IO::Socket::SSL Net::SSLeay Text::CSV JSON Locale::gettext Gtk3 Cairo Cairo::GObject Glib::Object::Introspection
+      sudo cpan -i ExtUtils::Depends ExtUtils::PkgConfig Glib LWP::UserAgent HTTP::Message Clone URI HTTP::Date Try::Tiny LWP::Protocol::https Net::HTTP IO::Socket::SSL Net::SSLeay Text::CSV JSON Locale::gettext Gtk3 Cairo Cairo::GObject Glib::Object::Introspection
     EOS
   end
 
