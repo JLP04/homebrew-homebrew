@@ -8,7 +8,7 @@ class Clamtk < Formula
     "BSD-3-Clause",
     any_of: ["GPL-1.0-or-later", "Artistic-2.0"],
   ]
-  revision 52
+  revision 53
   compatibility_version 1
   head "https://gitlab.com/dave_m/clamtk.git", branch: "master"
   livecheck do
@@ -79,8 +79,8 @@ class Clamtk < Formula
     end
 
     resource "HTTP::Message" do
-      url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/HTTP-Message-7.02.tar.gz"
-      sha256 "78abef1d833146b48d17db219b1b03d53cbbe37a28ccdad0efdcc5833ca5c60c"
+      url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/HTTP-Message-7.04.tar.gz"
+      sha256 "699f3350dbb7bd8fdc9f3b013b0c91b7c059783708443e39bc395fa33352f006"
     end
 
     resource "Clone" do
@@ -98,14 +98,9 @@ class Clamtk < Formula
       sha256 "b57d80ca6d821c6949ca48b27467d45aba7a9c77346562306facca781a003e44"
     end
 
-    resource "Try::Tiny" do
-      url "https://cpan.metacpan.org/authors/id/E/ET/ETHER/Try-Tiny-0.32.tar.gz"
-      sha256 "ef2d6cab0bad18e3ab1c4e6125cc5f695c7e459899f512451c8fa3ef83fa7fc0"
-    end
-
     resource "LWP::Protocol::https" do
-      url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/LWP-Protocol-https-6.15.tar.gz"
-      sha256 "44eec2da147ba0511090871b0ca82f69794376bc31e8c76d1040961ba57f59b8"
+      url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/LWP-Protocol-https-6.17.tar.gz"
+      sha256 "361c7c1eee8cf66812958f975f26ef2e2272a0c6221d2043477cb9c22b8d1c23"
     end
 
     resource "Net::HTTP" do
@@ -205,7 +200,7 @@ class Clamtk < Formula
         sudo mkdir -p "$d"/ClamTk
         sudo cp $(brew --prefix)/share/perl5/vendor_perl/ClamTk/*.pm "$d"/ClamTk/
       done
-      sudo cpan -i ExtUtils::Depends ExtUtils::PkgConfig Glib LWP::UserAgent HTTP::Message Clone URI HTTP::Date Try::Tiny LWP::Protocol::https Net::HTTP IO::Socket::SSL Net::SSLeay Text::CSV JSON Locale::gettext Gtk3 Cairo Cairo::GObject Glib::Object::Introspection
+      sudo cpan -i ExtUtils::Depends ExtUtils::PkgConfig Glib LWP::UserAgent HTTP::Message Clone URI HTTP::Date LWP::Protocol::https Net::HTTP IO::Socket::SSL Net::SSLeay Text::CSV JSON Locale::gettext Gtk3 Cairo Cairo::GObject Glib::Object::Introspection
     EOS
   end
 
