@@ -18,7 +18,7 @@ jobs:
         steps:
             - name: Set up Homebrew
               id: set-up-homebrew
-              uses: Homebrew/actions/setup-homebrew@df4b09108a1de9d6f995fe68f302b3f68bd6d2ef # 2026.07.20.1
+              uses: Homebrew/actions/setup-homebrew@5037c6f1012cc5ea0b9f03fedbaf9955ed9e51e0 # 2026.08.03.1
 
             - name: Install brew-vulns
               run: brew install homebrew/brew-vulns/brew-vulns
@@ -46,7 +46,7 @@ jobs:
             
             - name: Upload SARIF
               if: steps.scan.outputs.sarif == 'true'
-              uses: github/codeql-action/upload-sarif@e4fba868fa4b1b91e1fdab776edc8cfbe6e9fb81 # v4.37.3
+              uses: github/codeql-action/upload-sarif@f205ea1c3313d32999d8d6a48b4f6530d4437b38 # v4.37.4
               with:
                 sarif_file: vulns.sarif
                 category: brew-vulns
