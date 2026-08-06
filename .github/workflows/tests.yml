@@ -4,6 +4,13 @@ on:
     branches:
       - main
   pull_request:
+
+permissions: {}
+
+defaults:
+  run:
+    shell: bash -xeuo pipefail {0}
+
 jobs:
   test-bot:
     strategy:
