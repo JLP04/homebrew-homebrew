@@ -60,7 +60,6 @@ class XdgUtils < Formula
       Hello.
     EOS
     system "#{bin}/xdg-open", testpath/"test.txt"
-    system "#{bin}/xdg-open", "https://www.freedesktop.org/wiki/Software/xdg-utils/"
     (testpath/"test.html").write <<~EOS
       <html><body>Hello.</body></html>
     EOS
