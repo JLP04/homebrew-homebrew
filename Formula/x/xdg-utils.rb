@@ -29,6 +29,8 @@ class XdgUtils < Formula
     depends_on "mailutils" => :test
   end
 
+  deny_network_access!
+
   def install
     ENV["XML_CATALOG_FILES"] = "#{etc}/xml/catalog"
     system "./configure", *std_configure_args, "--disable-silent-rules"
