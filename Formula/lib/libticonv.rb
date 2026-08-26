@@ -33,6 +33,8 @@ class Libticonv < Formula
     depends_on "gettext"
   end
 
+  deny_network_access!
+
   def install
     Dir.chdir("libticonv/trunk")
     system "autoreconf", "-i", "-f"
