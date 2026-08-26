@@ -32,6 +32,8 @@ class Tfdocgen < Formula
     depends_on "gettext"
   end
 
+  deny_network_access!
+
   def install
     Dir.chdir("trunk") if build.stable?
     system "autoreconf", "-i", "-f"
