@@ -32,7 +32,8 @@ class Tfdocgen < Formula
     depends_on "gettext"
   end
 
-  deny_network_access!
+  # downloads test resources
+  allow_network_access! :test
 
   def install
     Dir.chdir("trunk") if build.stable?
