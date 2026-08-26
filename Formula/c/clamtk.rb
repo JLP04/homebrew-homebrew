@@ -159,6 +159,8 @@ class Clamtk < Formula
     end
   end
 
+  deny_network_access!
+
   def install
     if build.without? "perlbrew"
       ENV.prepend_create_path "PERL5LIB", "share/perl5/vendor_perl"
