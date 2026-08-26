@@ -62,101 +62,161 @@ class Clamtk < Formula
     resource "ExtUtils::Depends" do
       url "https://cpan.metacpan.org/authors/id/E/ET/ETJ/ExtUtils-Depends-0.8002.tar.gz"
       sha256 "02b9a46450050ce19b325b23e46bb4ec644229d7f2d95044f67a86d8efacdc29"
+      livecheck do
+        url :url
+      end
     end
 
     resource "ExtUtils::PkgConfig" do
       url "https://cpan.metacpan.org/authors/id/X/XA/XAOC/ExtUtils-PkgConfig-1.16.tar.gz"
       sha256 "bbeaced995d7d8d10cfc51a3a5a66da41ceb2bc04fedcab50e10e6300e801c6e"
+      livecheck do
+        url :url
+      end
     end
 
     resource "Glib" do
       url "https://cpan.metacpan.org/authors/id/X/XA/XAOC/Glib-1.3294.tar.gz"
       sha256 "d715f5a86bcc187075de85e7ae5bc07b0714d6edc196a92da43986efa44e5cbb"
+      livecheck do
+        url :url
+      end
     end
 
     resource "LWP::UserAgent" do
       url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/libwww-perl-6.83.tar.gz"
       sha256 "e75f0fa9d3c6f0daf5a5a72fa9f8b1c9c0d23e3a84a8522ccb4f835232b95505"
+      livecheck do
+        url :url
+      end
     end
 
     resource "HTTP::Message" do
       url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/HTTP-Message-7.04.tar.gz"
       sha256 "699f3350dbb7bd8fdc9f3b013b0c91b7c059783708443e39bc395fa33352f006"
+      livecheck do
+        url :url
+      end
     end
 
     resource "Clone" do
       url "https://cpan.metacpan.org/authors/id/A/AT/ATOOMIC/Clone-0.50.tar.gz"
       sha256 "f9732a4a857974db30905233589113003301b585b0cecda29a21cfba5bb014f9"
+      livecheck do
+        url :url
+      end
     end
 
     resource "URI" do
       url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/URI-5.36.tar.gz"
       sha256 "32719e57413db6e18492e104707b95c2210df637614c512e7368c9ec3c2f783b"
+      livecheck do
+        url :url
+      end
     end
 
     resource "HTTP::Date" do
       url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/HTTP-Date-6.08.tar.gz"
       sha256 "b57d80ca6d821c6949ca48b27467d45aba7a9c77346562306facca781a003e44"
+      livecheck do
+        url :url
+      end
     end
 
     resource "Try::Tiny" do
       url "https://cpan.metacpan.org/authors/id/E/ET/ETHER/Try-Tiny-0.32.tar.gz"
       sha256 "ef2d6cab0bad18e3ab1c4e6125cc5f695c7e459899f512451c8fa3ef83fa7fc0"
+      livecheck do
+        url :url
+      end
     end
 
     resource "LWP::Protocol::https" do
       url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/LWP-Protocol-https-6.17.tar.gz"
       sha256 "361c7c1eee8cf66812958f975f26ef2e2272a0c6221d2043477cb9c22b8d1c23"
+      livecheck do
+        url :url
+      end
     end
 
     resource "Net::HTTP" do
       url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/Net-HTTP-6.24.tar.gz"
       sha256 "290ed9a97b05c7935b048e6d2a356035871fca98ad72c01c5961726adf85c83c"
+      livecheck do
+        url :url
+      end
     end
 
     resource "IO::Socket::SSL" do
       url "https://cpan.metacpan.org/authors/id/S/SU/SULLR/IO-Socket-SSL-2.099.tar.gz"
       sha256 "a0be800ff4852b1567ee5500e772417ad7a360abff80c01b5b875c15d44be832"
+      livecheck do
+        url :url
+      end
     end
 
     resource "Net::SSLeay" do
       url "https://cpan.metacpan.org/authors/id/C/CH/CHRISN/Net-SSLeay-1.96.tar.gz"
       sha256 "ab213691685fb2a576c669cbc8d9266f8165a31563ad15b7c4030b94adfc0753"
+      livecheck do
+        url :url
+      end
     end
 
     resource "Text::CSV" do
       url "https://cpan.metacpan.org/authors/id/I/IS/ISHIGAKI/Text-CSV-2.06.tar.gz"
       sha256 "dfcaec925a788b0ba41e51bc6d16e21b0e98b4c7af9b79395090add75f5e506f"
+      livecheck do
+        url :url
+      end
     end
 
     resource "JSON" do
       url "https://cpan.metacpan.org/authors/id/I/IS/ISHIGAKI/JSON-4.11.tar.gz"
       sha256 "713bdbe724dbb915ed50265ffe47e079a511980cb2427aa19076788bb64c3182"
+      livecheck do
+        url :url
+      end
     end
 
     resource "Locale::gettext" do
       url "https://cpan.metacpan.org/authors/id/P/PV/PVANDRY/Locale-gettext-1.07.tar.gz"
       sha256 "909d47954697e7c04218f972915b787bd1244d75e3bd01620bc167d5bbc49c15"
+      livecheck do
+        url :url
+      end
     end
 
     resource "Gtk3" do
       url "https://cpan.metacpan.org/authors/id/X/XA/XAOC/Gtk3-0.038.tar.gz"
       sha256 "70dc4bf2aa74981c79e15fd298d998e05a92eba4811f1ad5c9f1f4de37737acc"
+      livecheck do
+        url :url
+      end
     end
 
     resource "Cairo" do
       url "https://cpan.metacpan.org/authors/id/X/XA/XAOC/Cairo-1.109.tar.gz"
       sha256 "8219736e401c2311da5f515775de43fd87e6384b504da36a192f2b217643077f"
+      livecheck do
+        url :url
+      end
     end
 
     resource "Cairo::GObject" do
       url "https://cpan.metacpan.org/authors/id/X/XA/XAOC/Cairo-GObject-1.005.tar.gz"
       sha256 "8d896444d71e1d0bca3d24e31e5d82bd0d9542aaed91d1fb7eab367bce675c50"
+      livecheck do
+        url :url
+      end
     end
 
     resource "Glib::Object::Introspection" do
       url "https://cpan.metacpan.org/authors/id/X/XA/XAOC/Glib-Object-Introspection-0.052.tar.gz"
       sha256 "555b4f1308939bb3141ea4570ad12e04e27c23329c302c9dc8725409e1049111"
+      livecheck do
+        url :url
+      end
     end
   end
 
