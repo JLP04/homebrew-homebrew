@@ -68,6 +68,8 @@ class Gfm < Formula
     depends_on "pango"
   end
 
+  deny_network_access!
+
   def install
     Dir.chdir("gfm/trunk")
     system "autoreconf", "-i", "-f"
