@@ -21,12 +21,11 @@ class XdgUtils < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0716349d827fb99128bc6b5adbc92bec746acef740a2c27eb62a92c10685e438"
   end
 
-  depends_on "lynx" => :build
+  depends_on "w3m" => :build
   depends_on "xmlto" => :build
 
   on_linux do
-    depends_on "lynx" => :test
-    depends_on "mailutils" => :test
+    depends_on "w3m" => :test
   end
 
   deny_network_access!
@@ -40,8 +39,7 @@ class XdgUtils < Formula
 
   test do
     ENV["HOME"] = testpath
-    ENV["BROWSER"] = "lynx" if OS.linux?
-    ENV["MAILER"] = "mail" if OS.linux?
+    ENV["BROWSER"] = "w3m" if OS.linux?
     (testpath/"desktop_icon_install.desktop").write <<~EOS
       [Desktop Entry]
       Version=1.0
@@ -60,6 +58,7 @@ class XdgUtils < Formula
       Hello.
     EOS
     system "#{bin}/xdg-open", testpath/"test.txt"
+    system "#{bin}/xdg-open", "https://www.freedesktop.org/wiki/Software/xdg-utils/"
     (testpath/"test.html").write <<~EOS
       <html><body>Hello.</body></html>
     EOS
