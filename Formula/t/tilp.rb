@@ -72,7 +72,8 @@ class Tilp < Formula
     depends_on "zlib-ng-compat"
   end
 
-  deny_network_access!
+  # downloads test resources
+  allow_network_access! :test
 
   def install
     Dir.chdir("tilp/trunk")
