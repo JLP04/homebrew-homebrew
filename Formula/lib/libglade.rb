@@ -53,6 +53,8 @@ class Libglade < Formula
     end
   end
 
+  deny_network_access!
+
   def install
     ENV.append "LDFLAGS", "-lgmodule-2.0"
     resource("config.guess").stage buildpath
