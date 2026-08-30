@@ -1,11 +1,11 @@
 class Libticables < Formula
   desc "TiCables library is a part of the TiLP project"
   homepage "http://lpg.ticalc.org/prj_tilp"
-  url "https://github.com/debrouxl/tilibs/archive/92c2d4177da5c201919662b1db3bb52e10c9b070.tar.gz"
+  url "https://github.com/debrouxl/tilibs/archive/6b05504e663b7310f77f876ef4286f504091860f.tar.gz"
   version "1.3.6"
-  sha256 "86dd7c916ed9326b9700d5090d01b65063a59ec3e1b08dedaf0b51cb037e47c3"
+  sha256 "d936b4adfb24f6e300d87c9999d01772cc20f2718077e8040923849c0e15dcf3"
   license "GPL-2.0-or-later"
-  revision 7
+  revision 8
   compatibility_version 1
   head "https://github.com/debrouxl/tilibs.git", branch: "master"
   livecheck do
