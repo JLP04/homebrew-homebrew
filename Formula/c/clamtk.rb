@@ -257,19 +257,23 @@ class Clamtk < Formula
     (share/"pixmaps").install Dir["images/*"]
   end
 
-  def post_install
-    inreplace bin/"clamtk", "#!#{formula_opt_bin("perl")}/perl", "#!/usr/bin/env perl" if build.with? "perlbrew"
+  post_install_steps do
+    unless_path_exists "lib/perl5", base: :libexec do
+      inreplace "clamtk", "#!{{HOMEBREW_PREFIX}}/opt/perl/bin/perl", "#!/usr/bin/env perl", base: :bin
+    end
   end
 
   def caveats
-    <<~EOS
-      If you want to install ClamTk to a perlbrew perl, run the following (you will need to install cairo, pkgconf, and vtk to build the perl modules):
-      for d in "$PERLBREW_ROOT"/perls/perl-*/lib/site_perl/5.*; do
-        sudo mkdir -p "$d"/ClamTk
-        sudo cp $(brew --prefix)/share/perl5/vendor_perl/ClamTk/*.pm "$d"/ClamTk/
-      done
-      sudo cpan -i ExtUtils::Depends ExtUtils::PkgConfig Glib LWP::UserAgent HTTP::Message Clone URI HTTP::Date Try::Tiny LWP::Protocol::https Net::HTTP IO::Socket::SSL Net::SSLeay Text::CSV JSON Locale::gettext Gtk3 Cairo Cairo::GObject Glib::Object::Introspection
-    EOS
+    if build.with? "perlbrew"
+      <<~EOS
+        If you want to install ClamTk to a perlbrew perl, run the following (you will need to install cairo, pkgconf, and vtk to build the perl modules):
+        for d in "$PERLBREW_ROOT"/perls/perl-*/lib/site_perl/5.*; do
+          sudo mkdir -p "$d"/ClamTk
+          sudo cp $(brew --prefix)/share/perl5/vendor_perl/ClamTk/*.pm "$d"/ClamTk/
+        done
+        sudo cpan -i ExtUtils::Depends ExtUtils::PkgConfig Glib LWP::UserAgent HTTP::Message Clone URI HTTP::Date Try::Tiny LWP::Protocol::https Net::HTTP IO::Socket::SSL Net::SSLeay Text::CSV JSON Locale::gettext Gtk3 Cairo Cairo::GObject Glib::Object::Introspection
+      EOS
+    end
   end
 
   test do
