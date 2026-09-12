@@ -73,7 +73,8 @@ class Libglade < Formula
         return 0;
       }
     EOS
-    ENV.libxml2
+    ENV["PKG_CONFIG_PATH"] = "#{formula_opt_lib("libxml2")}/pkgconfig"
+    flags_libxml2 = shell_output("pkg-config --cflags --libs libxml-2.0").chomp.split
     flags = %W[
       -I#{formula_opt_include("at-spi2-core")}/atk-1.0
       -I#{formula_opt_include("cairo")}/cairo
@@ -118,7 +119,7 @@ class Libglade < Formula
       flags << "-lgdk-x11-2.0"
       flags << "-lgtk-x11-2.0"
     end
-    system ENV.cc, "test.c", "-o", "test", *flags
+    system ENV.cc, "test.c", "-o", "test", *flags, *flags_libxml2
     system "./test"
   end
 end
