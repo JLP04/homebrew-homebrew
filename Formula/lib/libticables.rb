@@ -11,7 +11,7 @@ class Libticables < Formula
   livecheck do
     skip "Based on git commits, version number doesn't change"
   end
- 
+
   bottle do
     root_url "https://ghcr.io/v2/jlp04/homebrew"
     sha256 arm64_tahoe:   "6b3142066927f560b04dbccd9a0f6375ebc29006002e443904fc7e72e8e889db"

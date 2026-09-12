@@ -5,7 +5,7 @@ class Libglade < Formula
   sha256 "c41d189b68457976069073e48d6c14c183075d8b1d8077cb6dfb8b7c5097add3"
   license "GPL-2.0-only"
   compatibility_version 1
- 
+
   bottle do
     root_url "https://ghcr.io/v2/jlp04/homebrew"
     rebuild 8
@@ -73,7 +73,8 @@ class Libglade < Formula
         return 0;
       }
     EOS
-    ENV.libxml2
+    ENV["PKG_CONFIG_PATH"] = "#{formula_opt_lib("libxml2")}/pkgconfig"
+    flags_libxml2 = shell_output("pkg-config --cflags --libs libxml-2.0").chomp.split
     flags = %W[
       -I#{formula_opt_include("at-spi2-core")}/atk-1.0
       -I#{formula_opt_include("cairo")}/cairo
@@ -118,7 +119,7 @@ class Libglade < Formula
       flags << "-lgdk-x11-2.0"
       flags << "-lgtk-x11-2.0"
     end
-    system ENV.cc, "test.c", "-o", "test", *flags
+    system ENV.cc, "test.c", "-o", "test", *flags, *flags_libxml2
     system "./test"
   end
 end
