@@ -11,7 +11,7 @@ class Libticonv < Formula
   livecheck do
     skip "Based on git commits, version number doesn't change"
   end
- 
+
   bottle do
     root_url "https://ghcr.io/v2/jlp04/homebrew"
     sha256 cellar: :any, arm64_tahoe:   "7b2e8cff7f0ec53a0242351f73712a68a69541d0b3df55129e720a5294a8441e"
