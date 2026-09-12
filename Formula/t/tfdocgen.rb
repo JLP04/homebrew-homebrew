@@ -45,8 +45,8 @@ class Tfdocgen < Formula
 
   test do
     resource("testdocs") do
-      url "https://github.com/debrouxl/tilibs/archive/6b05504e663b7310f77f876ef4286f504091860f.tar.gz"
-      sha256 "d936b4adfb24f6e300d87c9999d01772cc20f2718077e8040923849c0e15dcf3"
+      url "https://github.com/debrouxl/tilibs/archive/6dba390e7390c4b98ae96287b39a3971c331fbef.tar.gz"
+      sha256 "c6c37882b73e86d6bee6f9b253976479491ab4956fbf5e556e3a585c66c94a50"
     end
 
     shell_output("#{bin}/tfdocgen --version")
