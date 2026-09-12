@@ -1,11 +1,11 @@
 class Libtifiles < Formula
   desc "TiFiles library is a part of the TiLP project"
   homepage "http://lpg.ticalc.org/prj_tilp"
-  url "https://github.com/debrouxl/tilibs/archive/1772623d157910d0837b9e8056ab62f80c4365a1.tar.gz"
+  url "https://github.com/debrouxl/tilibs/archive/6dba390e7390c4b98ae96287b39a3971c331fbef.tar.gz"
   version "1.1.8"
-  sha256 "9a67f90fc0aed8ca956fc69effa83ffb2937025d069435b0ad4413b1080079a6"
+  sha256 "c6c37882b73e86d6bee6f9b253976479491ab4956fbf5e556e3a585c66c94a50"
   license "GPL-2.0-or-later"
-  revision 2
+  revision 3
   compatibility_version 1
   head "https://github.com/debrouxl/tilibs.git", branch: "master"
   livecheck do
