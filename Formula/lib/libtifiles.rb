@@ -14,11 +14,11 @@ class Libtifiles < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/jlp04/homebrew"
-    sha256 arm64_tahoe:   "305a363e6d973d7c81ed5d56156944553d8dcc25fc0d5a74f6501670e514073f"
-    sha256 arm64_sequoia: "00095306c08992cde980b4b9ff1077fffeb4e6f07b88e21e253cb5ad1f6809e2"
-    sha256 arm64_sonoma:  "811e82a2320af1075bcd2a025fb665bc26ae90f20d1983edd00fab312d2057b2"
-    sha256 arm64_linux:   "87e7a267395ae4212a292d4477baa8bd67d928ec1bc1e4d767ba8200fe21be90"
-    sha256 x86_64_linux:  "c25bf5d2a93da5a5647c8c4bb06c48d185db0a87d17470b4188d7ad36e93600f"
+    sha256 arm64_tahoe:   "5957587744cd076fdeca7446f03c003836863bf82d1991cbff55dca841e2d1ee"
+    sha256 arm64_sequoia: "211a27cadfdb158dfa300c9d17572c323baab98379883b72d8e63334551d77b1"
+    sha256 arm64_sonoma:  "32e005bcd88255ecd297c98144766699e6fdc9ba2a102930e985b314e83264e5"
+    sha256 arm64_linux:   "1d45b877ff6f91093a97b8dcab499e1d3204b92eb4c03afaa04e707274bc4d9a"
+    sha256 x86_64_linux:  "69695c0912cc4032c946a4301993dba2570dca68f5c8c465cc0e8e5f5c87f30b"
   end
 
   depends_on "autoconf" => :build
