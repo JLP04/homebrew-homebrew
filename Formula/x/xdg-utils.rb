@@ -10,7 +10,7 @@ class XdgUtils < Formula
     url :stable
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
- 
+
   bottle do
     root_url "https://ghcr.io/v2/jlp04/homebrew"
     rebuild 4
