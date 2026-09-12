@@ -11,7 +11,7 @@ class Gfm < Formula
   livecheck do
     skip "Based on git commits, version number doesn't change"
   end
- 
+
   bottle do
     root_url "https://ghcr.io/v2/jlp04/homebrew"
     rebuild 4
