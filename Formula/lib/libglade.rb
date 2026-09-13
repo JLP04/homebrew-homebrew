@@ -16,7 +16,7 @@ class Libglade < Formula
     sha256 x86_64_linux:  "f3e2415d032d6b795f8973217871a490d10738f945dd2d004e9dfc9983ba58d5"
   end
 
-  depends_on "pkgconf" => :build
+  depends_on "pkgconf" => [:build, :test]
   depends_on "at-spi2-core"
   depends_on "gdk-pixbuf"
   depends_on "glib"
