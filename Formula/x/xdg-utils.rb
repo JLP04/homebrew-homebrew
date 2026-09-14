@@ -54,15 +54,17 @@ class XdgUtils < Formula
     system "#{bin}/xdg-desktop-icon", "install", "--novendor", "desktop_icon_install.desktop"
     assert_path_exists testpath/"Desktop/desktop_icon_install.desktop"
     system "#{bin}/xdg-desktop-icon", "uninstall", "desktop_icon_install.desktop"
-    (testpath/"test.txt").write <<~EOS
-      Hello.
-    EOS
-    system "#{bin}/xdg-open", testpath/"test.txt"
-    system "#{bin}/xdg-open", "https://www.freedesktop.org/wiki/Software/xdg-utils/"
-    (testpath/"test.html").write <<~EOS
-      <html><body>Hello.</body></html>
-    EOS
-    system "#{bin}/xdg-open", testpath/"test.html"
+    if OS.linux?
+      (testpath/"test.txt").write <<~EOS
+        Hello.
+      EOS
+      system "#{bin}/xdg-open", testpath/"test.txt"
+      system "#{bin}/xdg-open", "https://www.freedesktop.org/wiki/Software/xdg-utils/"
+      (testpath/"test.html").write <<~EOS
+        <html><body>Hello.</body></html>
+      EOS
+      system "#{bin}/xdg-open", testpath/"test.html"
+    end
     system "#{bin}/xdg-email", "'Jeremy White <jwhite@example.com>'" if OS.linux?
     system "#{bin}/xdg-mime", "query", "default", "text/plain"
     system "#{bin}/xdg-settings", "get", "default-web-browser" if OS.linux?
