@@ -13,12 +13,12 @@ class XdgUtils < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/jlp04/homebrew"
-    rebuild 4
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d0dd91a2de29645d227214afca0c0224b1ec2b3cb831a056ac2bfa2ea9a687b5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c53ad983cea5ecb32cffa808f02475f4a956d4780c50202dcbbcdd518eaaff9f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "724ecbb3b1630d0e0f5d5753b7989aa9ee4dc4fcb646503d9e8aa4a6f5b00ec3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f2d95ef70d9199c6e42567e4e6b4dc30c384d636cf61c3f24d27189cacc8aadd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7a9e6bac325601f61325053a7088a207a5da33c3685ac16eac6cc760b2840bff"
+    rebuild 5
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "3872361bbb1005963c65e2cf45a76698110b6126645ee8b0b1299269f7066ca1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e22690c905fc47e224186e6928e40dd5d167893c7b9c532e82b0ec337464ef59"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "9cacf94f9eb3b6e7a546374b2c028b406e858ae868614083b4a5db26236da69f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "46c3410a2b360685c089d6cfc88fc4570125d388179f58d3fcb117ab80b68e0c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "6fe4532524b97071ad55e369cd3cdee2f9dd3f52bc7b7afc60d3d7ffaa32c563"
   end
 
   depends_on "w3m" => :build
