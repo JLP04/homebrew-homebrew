@@ -15,7 +15,7 @@ class Clamtk < Formula
     url :stable
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
-
+ 
   bottle do
     root_url "https://ghcr.io/v2/jlp04/homebrew"
     sha256 cellar: :any, arm64_tahoe:   "bfbbb5943964dad7573c416cb497ccfcac308b797d20f759cc65340f4ca34100"
