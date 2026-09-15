@@ -8,12 +8,12 @@ class Libglade < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/jlp04/homebrew"
-    rebuild 8
-    sha256 arm64_tahoe:   "a2889649f863702ef55f46638e4ab7fc4aa50d736b0d12281592452619de6be2"
-    sha256 arm64_sequoia: "c66908b6aba547d00cace5ae3f8334f2c4c3b6db01448a47a31c4302172c680d"
-    sha256 arm64_sonoma:  "2a46f4f3e79280cb207a82eb9bafc10fa160e0a15600c04f86d7d04e318f01c7"
-    sha256 arm64_linux:   "aad5364921fb1b7451e4ba8738cb5b0fcfc515e94dd152b153122c0391e0f3a1"
-    sha256 x86_64_linux:  "f3e2415d032d6b795f8973217871a490d10738f945dd2d004e9dfc9983ba58d5"
+    rebuild 9
+    sha256 arm64_golden_gate: "8984ee13f3a13030a4e6f884a070bd2310b76c89efa42be205587996473d9b75"
+    sha256 arm64_tahoe:       "e6f6f43de5eca08d0ae4e39b9791e0a93e742378c3ce7b19c188eb0c692f5396"
+    sha256 arm64_sequoia:     "c517d1277360b584434786abd7e9c8ea6716d2bdc9b4074498fe3e5dfd74b60a"
+    sha256 arm64_linux:       "c28c670a0903b628fe4064d30f6fc847f8414b6d35a7a5d9ede49ea1a8703978"
+    sha256 x86_64_linux:      "f0ce759b86130d5f1c9cfbc7079328dfa04507da4ef0987211b59b3a5a70f028"
   end
 
   depends_on "pkgconf" => [:build, :test]
