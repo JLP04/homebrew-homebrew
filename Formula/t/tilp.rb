@@ -91,8 +91,8 @@ class Tilp < Formula
     end
 
     resource("testfile2") do
-      url "https://education.ti.com/download/en/ed-tech/BCBFECEC5F4242B28E9AE89DA7C4BA59/B9A1D3FF707B4EB18501382FB9EFB33B/TI84CEBundle-5.8.4.58.b84"
-      sha256 "5c31b462e31cd00caf3e1175aa90ca9266ac7385e49c424f19e50da8f49e8462"
+      url "https://education.ti.com/download/en/ed-tech/BCBFECEC5F4242B28E9AE89DA7C4BA59/41CFC58F1E3C4B4DA3E3B717DD34BAC3/TI84CEBundle-5.8.5.74.b84"
+      sha256 "a027c822f08622e0b4393f680f8824b7601db8748a1bee6a8e3fc5e1444d1161"
     end
 
     resource("testfile1").stage testpath
@@ -100,7 +100,7 @@ class Tilp < Formula
     shell_output("#{bin}/tilp --help")
     shell_output("#{bin}/tilp --version")
     system bin/"tilp", "-n"
-    filenames = "CabriJr_CE_5.8.3.0048.8ek TI84CEBundle-5.8.4.58.b84".chomp.split
+    filenames = "CabriJr_CE_5.8.3.0048.8ek TI84CEBundle-5.8.5.74.b84".chomp.split
     system bin/"tilp", "-n", "--cable", "Null", "--calc", "None", *filenames
   end
 end
