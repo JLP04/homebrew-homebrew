@@ -8,7 +8,7 @@ class Clamtk < Formula
     "BSD-3-Clause",
     any_of: ["GPL-1.0-or-later", "Artistic-2.0"],
   ]
-  revision 55
+  revision 56
   compatibility_version 1
   head "https://gitlab.com/dave_m/clamtk.git", branch: "master"
   livecheck do
@@ -100,8 +100,8 @@ class Clamtk < Formula
     end
 
     resource "Clone" do
-      url "https://cpan.metacpan.org/authors/id/A/AT/ATOOMIC/Clone-0.50.tar.gz"
-      sha256 "f9732a4a857974db30905233589113003301b585b0cecda29a21cfba5bb014f9"
+      url "https://cpan.metacpan.org/authors/id/A/AT/ATOOMIC/Clone-0.51.tar.gz"
+      sha256 "f17f66fec97dacca67ac9585701d2d079cfc80539fe6e8160c201c4e55f67507"
       livecheck do
         url :url
       end
@@ -226,6 +226,7 @@ class Clamtk < Formula
     if build.without? "perlbrew"
       ENV.prepend_create_path "PERL5LIB", "share/perl5/vendor_perl"
       ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
+      ENV["OPENSSL_PREFIX"] = formula_opt_prefix("openssl@3") if MacOS.version == :sequoia && Hardware::CPU.arm?
       resources.each do |res|
         res.stage do
           ENV["PERL_MM_USE_DEFAULT"] = "1"
