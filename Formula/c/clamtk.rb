@@ -226,6 +226,7 @@ class Clamtk < Formula
     if build.without? "perlbrew"
       ENV.prepend_create_path "PERL5LIB", "share/perl5/vendor_perl"
       ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
+      ENV["OPENSSL_PREFIX"] = formula_opt_prefix("openssl@3")
       resources.each do |res|
         res.stage do
           ENV["PERL_MM_USE_DEFAULT"] = "1"
