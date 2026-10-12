@@ -8,7 +8,7 @@ class Clamtk < Formula
     "BSD-3-Clause",
     any_of: ["GPL-1.0-or-later", "Artistic-2.0"],
   ]
-  revision 56
+  revision 57
   compatibility_version 1
   head "https://gitlab.com/dave_m/clamtk.git", branch: "master"
   livecheck do
@@ -45,7 +45,7 @@ class Clamtk < Formula
   depends_on "glib"
   depends_on "gobject-introspection"
   depends_on "gtk+3"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "perl"
 
   on_macos do
