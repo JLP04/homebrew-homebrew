@@ -72,8 +72,17 @@ class Tilp < Formula
     depends_on "zlib-ng-compat"
   end
 
-  # downloads test resources
-  allow_network_access! :test
+  resource "testfile1", :test do
+    url "https://education.ti.com/download/en/ed-tech/55EDE969CFD2484487B4556641BDDC4E/99F094C3FF7140A998994A8BE767A2E0/CabriJr_CE_5.8.3.0048.8ek"
+    sha256 "845594b672bd20f0903caa6ea93295601e802a901be3f2efdc480a3607d0eba8"
+  end
+
+  resource "testfile2", :test do
+    url "https://education.ti.com/download/en/ed-tech/BCBFECEC5F4242B28E9AE89DA7C4BA59/41CFC58F1E3C4B4DA3E3B717DD34BAC3/TI84CEBundle-5.8.5.74.b84"
+    sha256 "a027c822f08622e0b4393f680f8824b7601db8748a1bee6a8e3fc5e1444d1161"
+  end
+
+  deny_network_access!
 
   def install
     Dir.chdir("tilp/trunk")
@@ -85,16 +94,6 @@ class Tilp < Formula
   end
 
   test do
-    resource("testfile1") do
-      url "https://education.ti.com/download/en/ed-tech/55EDE969CFD2484487B4556641BDDC4E/99F094C3FF7140A998994A8BE767A2E0/CabriJr_CE_5.8.3.0048.8ek"
-      sha256 "845594b672bd20f0903caa6ea93295601e802a901be3f2efdc480a3607d0eba8"
-    end
-
-    resource("testfile2") do
-      url "https://education.ti.com/download/en/ed-tech/BCBFECEC5F4242B28E9AE89DA7C4BA59/41CFC58F1E3C4B4DA3E3B717DD34BAC3/TI84CEBundle-5.8.5.74.b84"
-      sha256 "a027c822f08622e0b4393f680f8824b7601db8748a1bee6a8e3fc5e1444d1161"
-    end
-
     resource("testfile1").stage testpath
     resource("testfile2").stage testpath
     shell_output("#{bin}/tilp --help")
