@@ -33,8 +33,12 @@ class Tfdocgen < Formula
     depends_on "gettext"
   end
 
-  # downloads test resources
-  allow_network_access! :test
+  resource "testdocs", :test do
+    url "https://github.com/debrouxl/tilibs/archive/6dba390e7390c4b98ae96287b39a3971c331fbef.tar.gz"
+    sha256 "c6c37882b73e86d6bee6f9b253976479491ab4956fbf5e556e3a585c66c94a50"
+  end
+
+  deny_network_access!
 
   def install
     Dir.chdir("trunk") if build.stable?
@@ -45,11 +49,6 @@ class Tfdocgen < Formula
   end
 
   test do
-    resource("testdocs") do
-      url "https://github.com/debrouxl/tilibs/archive/6dba390e7390c4b98ae96287b39a3971c331fbef.tar.gz"
-      sha256 "c6c37882b73e86d6bee6f9b253976479491ab4956fbf5e556e3a585c66c94a50"
-    end
-
     shell_output("#{bin}/tfdocgen --version")
     shell_output("#{bin}/tfdocgen --help")
     resource("testdocs").stage testpath/"libs"
