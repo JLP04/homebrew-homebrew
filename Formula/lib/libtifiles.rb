@@ -36,8 +36,12 @@ class Libtifiles < Formula
     depends_on "gettext"
   end
 
-  # downloads test resources
-  allow_network_access! :test
+  resource "testfile", :test do
+    url "https://education.ti.com/download/en/ed-tech/55EDE969CFD2484487B4556641BDDC4E/99F094C3FF7140A998994A8BE767A2E0/CabriJr_CE_5.8.3.0048.8ek"
+    sha256 "845594b672bd20f0903caa6ea93295601e802a901be3f2efdc480a3607d0eba8"
+  end
+
+  deny_network_access!
 
   def install
     Dir.chdir("libtifiles/trunk")
@@ -49,11 +53,6 @@ class Libtifiles < Formula
   end
 
   test do
-    resource("testfile") do
-      url "https://education.ti.com/download/en/ed-tech/55EDE969CFD2484487B4556641BDDC4E/99F094C3FF7140A998994A8BE767A2E0/CabriJr_CE_5.8.3.0048.8ek"
-      sha256 "845594b672bd20f0903caa6ea93295601e802a901be3f2efdc480a3607d0eba8"
-    end
-
     (testpath/"test.c").write <<~EOS
       #include <tilp2/tifiles.h>
 
