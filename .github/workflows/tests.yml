@@ -21,7 +21,7 @@ jobs:
             container: 
               image: ghcr.io/homebrew/brew:main
               options: --privileged
-          - os: ubuntu-24.04-arm
+          - os: ubuntu-26.04-arm
             container: 
               image: ghcr.io/homebrew/brew:main
               options: --privileged
