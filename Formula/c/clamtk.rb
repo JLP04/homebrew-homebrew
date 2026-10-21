@@ -12,8 +12,9 @@ class Clamtk < Formula
   compatibility_version 1
   head "https://gitlab.com/dave_m/clamtk.git", branch: "master"
   livecheck do
-    url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    url "https://gitlab.com/dave_m/clamtk/-/raw/master/latest"
+    regex(/^(\d+(?:\.\d+)+)$/i)
+    strategy :page_match
   end
 
   bottle do
