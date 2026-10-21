@@ -16,12 +16,12 @@ class Libticalcs < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/jlp04/homebrew"
-    rebuild 1
-    sha256 arm64_golden_gate: "9a643aa0dba4a2d5f79d174201e4a2f374e0ac275e82cd04a4758469f76e644a"
-    sha256 arm64_tahoe:       "ea4a0031e9306376b7aea06e22ec2cc1668d203bec365a4a978debf4698d70dd"
-    sha256 arm64_sequoia:     "caead0c26175805e433e1f4f08aba09a3ce94dd6555670ae3f215d0f57087c52"
-    sha256 arm64_linux:       "8b251e59eae6d673dbfac34dcdabbb01528ccf1b6c9ca80d5f3b0c9d0daa0a42"
-    sha256 x86_64_linux:      "e1acbea222b7607443e48279930d2794206aeee624b04e6321d10f77672b80ed"
+    rebuild 2
+    sha256 arm64_golden_gate: "8cdd12c1ddbfd809ef529bdf43f6c9416a449920d00cf0f18c007aa41488b00a"
+    sha256 arm64_tahoe:       "c05460a84f1d21e66adbdcea5ef26507a32cf6e02f47db6c15265b1caa9c7477"
+    sha256 arm64_sequoia:     "31177d3befa1b43929764972d981ee8721b9df8b3ba9521ded0fbe2ac2542d0d"
+    sha256 arm64_linux:       "be9481cf63adf656abfd38fbbda30674c16150608203b8dca44f301561023b2f"
+    sha256 x86_64_linux:      "af11780052c0d60d1b49e93fc295e18056cc42739367ed7accd3db8bcf50ef31"
   end
 
   depends_on "autoconf" => :build
