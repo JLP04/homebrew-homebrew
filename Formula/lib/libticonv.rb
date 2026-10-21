@@ -16,12 +16,12 @@ class Libticonv < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/jlp04/homebrew"
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "07b83ba6e408f16b776b6964edf7df62233bf94075d256bbfd17888a03cb4b37"
-    sha256 cellar: :any, arm64_tahoe:       "c8eb67c7d754c9eccb1c77a00a51d7ce67ed1cdfca90fd27e8c0d07b1964015a"
-    sha256 cellar: :any, arm64_sequoia:     "fb3e5c40976bcd0166953592e644d3310e97fab53034fed1e02415c1a71b3a40"
-    sha256 cellar: :any, arm64_linux:       "451d20253eb62b101d83d43f2007d0021797b15fe39816155074a8764bc9ce17"
-    sha256 cellar: :any, x86_64_linux:      "bc5411a1e8681187546e4eb05f297797b2575e9f4ca2bcb0a7a77cfa68e850d6"
+    rebuild 2
+    sha256 cellar: :any, arm64_golden_gate: "c3cc77284904a8d22a3baeb65bdbabdb741c66d3853a04dce361f4ce88f2fc38"
+    sha256 cellar: :any, arm64_tahoe:       "11bc56d5aa2e8ca5bf85d5f0aaedbed93e8e9cdca5fd8ef7167db0ee85e9ba76"
+    sha256 cellar: :any, arm64_sequoia:     "aed1ab60e5330cd4bbd706268b02ab8e1c7bc08d1d9bde596591c5d73540fb23"
+    sha256 cellar: :any, arm64_linux:       "ca2ccd30cb32f9c2bc790bf96283c6a373747c45ced0487c50998e6dc077a3ea"
+    sha256 cellar: :any, x86_64_linux:      "f2d3c170f890e0704553d4347b86bc9047c83b1f6350b1317a12a44e7b6364f4"
   end
 
   depends_on "autoconf" => :build
