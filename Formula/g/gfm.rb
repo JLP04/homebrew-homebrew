@@ -9,7 +9,9 @@ class Gfm < Formula
   compatibility_version 1
   head "https://github.com/debrouxl/tilp_and_gfm.git", branch: "master"
   livecheck do
-    skip "Based on git commits, version number doesn't change"
+    url "https://raw.githubusercontent.com/debrouxl/tilp_and_gfm/refs/heads/master/gfm/trunk/configure.ac"
+    regex(/AC_INIT\(GFM, (.*), \[tilp-users@lists\.sourceforge\.net\]\)/i)
+    strategy :page_match
   end
 
   bottle do
