@@ -16,12 +16,12 @@ class Gfm < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/jlp04/homebrew"
-    rebuild 5
-    sha256 arm64_golden_gate: "a856f0c48d0cb601287de14e1b0bd991eaf1c9625f6642665a0b19219ec1cc65"
-    sha256 arm64_tahoe:       "b5eb03d53a2ac8576609e644be400e0262c2b89a1ef68735ea7d3ff8f46c6144"
-    sha256 arm64_sequoia:     "18bba2af99284bc00b5afa3d6f28fd2410523343056f05efd67d25fe58034691"
-    sha256 arm64_linux:       "8bf1d848da5f4978f645410ea772edca568e11adf3f8b83df81b76eb0e3b2122"
-    sha256 x86_64_linux:      "60c496bc1fbff5e30546bc43527139e71a13c71295907695048859a08cb43631"
+    rebuild 6
+    sha256 arm64_golden_gate: "bb5eff122b7f7b8179990e9934d0a9105c502f1c30e7a821f18a42625fd5c81b"
+    sha256 arm64_tahoe:       "cf15d70855c8dfd768422814c2357a094abd7cd2e5e5962bac0365c3042ca07f"
+    sha256 arm64_sequoia:     "74b8bfd207b90f820fdbed5814f7cd938c6cc1400654c45e56b9b86e3fa2bc87"
+    sha256 arm64_linux:       "e699d8a7f5059ce0017450df87fe3776926b9aa830a831f979eb2efd61b6ffbb"
+    sha256 x86_64_linux:      "5a27d378f19ef4fed8dfe01210c74921c0f8568d9f33ac5d0bdb22b3e2c7f945"
   end
 
   depends_on "autoconf" => :build
