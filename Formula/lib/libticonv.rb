@@ -9,7 +9,9 @@ class Libticonv < Formula
   compatibility_version 1
   head "https://github.com/debrouxl/tilibs.git", branch: "master"
   livecheck do
-    skip "Based on git commits, version number doesn't change"
+    url "https://raw.githubusercontent.com/debrouxl/tilibs/refs/heads/master/libticonv/trunk/configure.ac"
+    regex(/VERSION="(.*)"/i)
+    strategy :page_match
   end
 
   bottle do
