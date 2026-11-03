@@ -12,13 +12,12 @@ class Riscv32UnknownElfGcc < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "3e0abebc851c480c59525a7b3fd8873fc9299fba0a6ab7fcf95930c37d29fc68"
-    sha256 arm64_tahoe:       "8f7e26c7acdfe47af2a57220b8ad9e2cb220e1056f79523b6c4a3c223bf81c28"
-    sha256 arm64_sequoia:     "5859b76f78cc98f21915025f04ba2b4c8a35a7355e07ef2f7aa41ecf015d68e0"
-    sha256 arm64_sonoma:      "0a186aa320a1da1acb909546646e94722b2438faa6c29c5c2ea95dad01a38de5"
-    sha256 sonoma:            "b497e0040c8acaac7f1d7c91f5bcb746e012682f6abf285d0001db0b5bbf0637"
-    sha256 arm64_linux:       "2653235f45468f78ecba44b21ee08aafb10cb34cac844193e54fc9eae836cc9e"
-    sha256 x86_64_linux:      "b2c02e74ba46baeb8b66e2b192674d40a81d3181c1b4d2b28977834504ae3e5a"
+    root_url "https://ghcr.io/v2/jlp04/homebrew"
+    sha256 arm64_golden_gate: "0aac783218415d8f17953081de7b1ed2fb8ed609c366ca958a17222a69bf0c4e"
+    sha256 arm64_tahoe:       "6f93a5dcf4fcf0037346ef794164a111d0ab8aed56ac9d1aba863f64570dcb1a"
+    sha256 arm64_sequoia:     "6ef70e35da1978d5527342480ec7be6aa0960d2b0a7e4848d2283f3ed6aa7df7"
+    sha256 arm64_linux:       "7975b8248094af47d2b39df2266a030da522d502f2d9822654a1226bd68daa73"
+    sha256 x86_64_linux:      "1100da512af3c7f84d293fc293981aebd422fa2bcd204ee1ca34bbe6f831c7f3"
   end
 
   depends_on "gmp"
