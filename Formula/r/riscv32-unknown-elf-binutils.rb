@@ -13,11 +13,12 @@ class Riscv32UnknownElfBinutils < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/jlp04/homebrew"
-    sha256 arm64_golden_gate: "eca7ad7d99ba14001d1b1b7b1bec8b0a8c829a01ef8c34a3a4fe9def457d5d93"
-    sha256 arm64_tahoe:       "53203f7360a83b1f3892335d2986d536d4eaa14024f30e1ca6f2c36163648ccf"
-    sha256 arm64_sequoia:     "9104990d0b9aa2c9b6961b56219379a220d921d94b3290331f6a0f9080bd8445"
-    sha256 arm64_linux:       "b38d7092f77b1efe07a6564b7a2c27a748073464a7cb4e9485e51759fbd8ee05"
-    sha256 x86_64_linux:      "c312786b72a026e3b63b3f0c457d56093b4fc8f58f70abbe2c25bba4285c6986"
+    rebuild 1
+    sha256 arm64_golden_gate: "c081452ae69c29342192fe56d653d9fb9b5792f9b1fd67a0f7897dda9978bc38"
+    sha256 arm64_tahoe:       "0027d6cd7f60d21cb3e46e0018a734ad2b6b06bf38e8d03099171accdd2e318d"
+    sha256 arm64_sequoia:     "a3104317d6210454e7db55209590b8f73f79ee24b0ec7c9e10d44fb8b7ab72de"
+    sha256 arm64_linux:       "aa0ad9ed7383e600dcde828ce6220bdb677bc98526fecd4389ea324785b73f19"
+    sha256 x86_64_linux:      "5aeeae0441fa43bc42c08719466401d5c196c6c3ee19a63209ceed11116a9839"
   end
 
   depends_on "pkgconf" => :build
