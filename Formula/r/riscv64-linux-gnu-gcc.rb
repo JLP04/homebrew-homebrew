@@ -11,6 +11,15 @@ class Riscv64LinuxGnuGcc < Formula
     formula "gcc"
   end
 
+  bottle do
+    root_url "https://ghcr.io/v2/jlp04/homebrew"
+    sha256 arm64_golden_gate: "244d8971a8ddf3ddd9e4395418b1c2fb8312e3ceb5f4590ee7c7615bed729861"
+    sha256 arm64_tahoe:       "17d2108ebcc2b9a063ff912dcf6ad5243c827e1edd14ac8f7ddab38844d899ce"
+    sha256 arm64_sequoia:     "bdcfd32ac9ba8a54ed390644f78f66c415b5b68feed2d1c8712a241ba9080305"
+    sha256 arm64_linux:       "7d62fb479f85ac17c2ebd4fb01268a0a9ede9df3b4b72fcd931cf666ce922ead"
+    sha256 x86_64_linux:      "8ba72fba4b52122c2e2271a9de9b4dccbc7ae3c2580534c20b7e42b8c2de0619"
+  end
+
   depends_on "gmp"
   depends_on "libmpc"
   depends_on "mpfr"
