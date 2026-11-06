@@ -18,7 +18,6 @@ class Riscv64LinuxGnuGcc < Formula
   depends_on "zstd"
 
   on_linux do
-    depends_on "glibc" => :build
     depends_on "zlib-ng-compat"
   end
 
@@ -37,22 +36,20 @@ class Riscv64LinuxGnuGcc < Formula
                              "--enable-languages=c,c++"
       system "make", "all-gcc"
       system "make", "install-gcc"
-      if OS.mac?
-        system "make", "-i", "distclean"
-        truetarget = "riscv64-unknown-elf"
-        build_time_tools = "#{formula_opt_prefix("riscv64-linux-gnu-binutils")}/riscv64-linux-gnu/bin"
-        system "../configure", "--target=#{truetarget}",
-                              "--prefix=#{prefix}",
-                              "--infodir=#{info}/#{target}",
-                              "--disable-nls",
-                              "--without-isl",
-                              "--without-headers",
-                              "--with-as=#{formula_opt_bin("riscv64-linux-gnu-binutils")}/riscv64-linux-gnu-as",
-                              "--with-ld=#{formula_opt_bin("riscv64-linux-gnu-binutils")}/riscv64-linux-gnu-ld",
-                              "--with-build-time-tools=#{build_time_tools}",
-                              "--with-system-zlib",
-                              "--enable-languages=c,c++"
-      end
+      system "make", "-i", "distclean"
+      truetarget = "riscv64-unknown-elf"
+      build_time_tools = "#{formula_opt_prefix("riscv64-linux-gnu-binutils")}/riscv64-linux-gnu/bin"
+      system "../configure", "--target=#{truetarget}",
+                            "--prefix=#{prefix}",
+                            "--infodir=#{info}/#{target}",
+                            "--disable-nls",
+                            "--without-isl",
+                            "--without-headers",
+                            "--with-as=#{formula_opt_bin("riscv64-linux-gnu-binutils")}/riscv64-linux-gnu-as",
+                            "--with-ld=#{formula_opt_bin("riscv64-linux-gnu-binutils")}/riscv64-linux-gnu-ld",
+                            "--with-build-time-tools=#{build_time_tools}",
+                            "--with-system-zlib",
+                            "--enable-languages=c,c++"
       system "make", "all-target-libgcc"
       system "make", "install-target-libgcc"
 
